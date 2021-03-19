@@ -10,7 +10,7 @@
  */
 function sayHello(name) {
   return "Hello " + name + "!";
-};
+}
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -78,6 +78,7 @@ function calculateTip(tipP, mealA) {
  */
 var userName = prompt("May I have your name?");
 var tipPercent = parseFloat(prompt("What percentage would you like to tip at?")) / 100;
+//Above I'm having the user type a regular number like 10, and I'm dividing the number by 100, so it becomes .10 instead of skiping it and making them do .10
 var meal = parseFloat(prompt("How much was your meal?"));
 var mealTotal = calculateTip(tipPercent,meal) + meal;
 alert("Hello, " + userName + " with a $" + calculateTip(tipPercent,meal).toFixed(2) + " tip, your total comes out to: $" + mealTotal.toFixed(2) + ".");
@@ -97,4 +98,10 @@ alert("Hello, " + userName + " with a $" + calculateTip(tipPercent,meal).toFixed
  */
 function applyDiscount(price,discount) {
   return price - (price * discount);
-};
+}
+function applyDiscountFixed(price,discount) {
+  return price.toFixed(2) - (price.toFixed(2 * discount));
+}
+//Option shift allows you to click multiple cursors.only for inltellj
+//Option shift allows you to click multiple cursors.only for inltellj
+//Option shift allows you to click multiple cursors.only for inltellj
