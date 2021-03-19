@@ -27,14 +27,15 @@ var classTime = confirm("Press the OK button if you can have class from 9:00AM t
 var classSize = confirm("Press OK if the class has an opening available for you.")
 // alert("If the word at the END is true you may register for this class, if it is false you cannot. " +  (classTime && classSize))
 var available = classSize && classTime
-if (available == true) {alert("You may register for this class.")}
+if (available === true) {alert("You may register for this class.")}
 else {alert("You may NOT register for this class.")}
+//If (this part is true) { This happens} else {If none of the if statements were true then this will happen}
 
 // //Part 3.4 - I included a final version with the if and else statements used
 var itemOverTwo = parseInt(prompt("How many items did you purchase?")) > 2
 var offerExpire = confirm("Press OK if this offer is NOT expired")
 var membership = confirm("Press OK if you ARE a PREMIUM member.")
-var offer = (itemOverTwo && offerExpire) || membership
+var offer = (itemOverTwo || membership) && offerExpire
 //alert("If the word at the END is true you may use this offer, if it is false you cannot. " + offer )
-if (offer == true) {alert("You may use this offer!")}
+if (offer === true) {alert("You may use this offer!")}
 else {alert("You may NOT use this offer!")}
