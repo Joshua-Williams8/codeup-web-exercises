@@ -8,7 +8,7 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-function sayHello(name) {;
+function sayHello(name) {
   return "Hello " + name + "!";
 };
 /**
@@ -26,8 +26,8 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = "Josh"
-console.log(sayHello(myName))
+var myName = "Josh";
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -50,7 +50,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(x) {;
+function isTwo(x) {
   return x === 2;
 };
 console.log(isTwo(random));
@@ -67,8 +67,8 @@ console.log(random + " was the number fyi.");
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tipP, mealA) {
-  return tipP * mealA
-}
+  return tipP * mealA;
+};
 
 /**
  * TODO:
@@ -80,7 +80,7 @@ var userName = prompt("May I have your name?");
 var tipPercent = parseFloat(prompt("What percentage would you like to tip at?")) / 100;
 var meal = parseFloat(prompt("How much was your meal?"));
 var mealTotal = calculateTip(tipPercent,meal) + meal;
-alert("Hello, " + userName + " with a $" + calculateTip(tipPercent,meal).toFixed(2) + " tip, your total comes out to: $" + mealTotal.toFixed(2) + ".")
+alert("Hello, " + userName + " with a $" + calculateTip(tipPercent,meal).toFixed(2) + " tip, your total comes out to: $" + mealTotal.toFixed(2) + ".");
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -96,5 +96,5 @@ alert("Hello, " + userName + " with a $" + calculateTip(tipPercent,meal).toFixed
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(price,discount) {
-  return price - (price * discount)
-}
+  return price - (price * discount);
+};
