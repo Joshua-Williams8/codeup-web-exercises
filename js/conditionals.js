@@ -119,7 +119,30 @@ function calculateTotal(luckNumber,itemPrices) {
     // return luckyNumber + " This number is not a lucky number. The total today is: $" + itemPrices
   }
 }
-
+//Below is the same thing above using switch statements instead
+function calculateTotalSwitch(luckNumber,itemPrices) {
+  switch (luckNumber) {
+    case 0 :
+      return itemPrices
+      break;
+    case 1 :
+      return itemPrices - (itemPrices * .10);
+      break;
+    case 2 :
+      return itemPrices - (itemPrices * .25);
+    case 3 :
+      return itemPrices - (itemPrices * .35);
+      break;
+    case 4 :
+      return itemPrices - (itemPrices * .50);
+      break;
+    case 5 :
+      return 0;
+      break;
+    default:
+      return itemPrices
+  }
+}
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -147,52 +170,143 @@ function calculateTotal(luckNumber,itemPrices) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+//The variable below is asking if the user wants to give a number to us.
 var giveANumber = confirm("Would you like to enter a number?")
+//I'm defined these are undefined because it's logic for a later part.
 var isOddOrEven
 var isPosOfNeg
+//Below is if the user hits cancel or DOES NOT want to give us a number, the empty execute ends the if statement.
 if (giveANumber === false ) {
 
+  //Below is if the user did say yes to our confirm, then I want to create a variable called aNumber, and give them a prompt to fill with that number.
 } else if (giveANumber === true ) {
     var aNumber = parseFloat(prompt("Please enter a number."))
-    if (typeof aNumber !== "number") {
+  //The if statement below is if the user doesn't enter a number in the prompt then I alert them they didn't.
+    if (isNaN(aNumber) === true) {
     alert("You did not enter a number")
-    } }
-if (aNumber % 2 === 0) {
+      //I didn't use an else statement, but if I did, I would leave it blank because I don't want to execute any code.
+    }
+}
+//Below are the other statements required for the alerts.
+//If the number from the prompt earlier divided by 2 doesn't have a remainder then...
+if (aNumber % 2 === 0 && aNumber !== 0) {
+  //I'm defining a va
   var isOddOrEven = "This Number is EVEN.";
 } else if (aNumber % 2 === 1 || aNumber % 2 === -1 ) {
   var isOddOrEven = "This Number is ODD.";
-};
+} else if(aNumber === 0) {
+  var isOddOrEven = "This Number is 0 so it's NOT EVEN OR ODD."
+} else {
 
-if (typeof aNumber === "number") {
+}
+//I need the second half of this && statement because if the aNumber value is NaN, then I don't want to create the variable.
+if ((typeof aNumber === "number") && (isNaN(aNumber) === false)) {
   var aNumberPlusHundoo = aNumber + 100;
+  var aNumberPlusHundooString = aNumber + " + 100 is "+ aNumberPlusHundoo;
 }
 //
 if (aNumber > 0) {
   var isPosOrNeg = "This Number is POSITIVE.";
 } else if (aNumber < 0) {
   var isPosOrNeg = "This Number is NEGATIVE.";
+}  else if(aNumber === 0) {
+  var isPosOrNeg = "This Number is 0 so it's NOT POSITIVE OR NEGATIVE."
+} else {
+
+}
+//Below are the original alerts for the stuff, but they are commented out for the function version alerts.
+// if (typeof isOddOrEven === "undefined"){
+//
+// } else {
+//   alert(isOddOrEven);
+// };
+//
+// if (typeof isPosOrNeg === "undefined"){
+//
+// } else {
+//   alert(isPosOrNeg);
+// };
+//
+// if (typeof aNumberPlusHundoo === "undefined"){
+//
+// } else {
+//   alert(aNumberPlusHundooString);
+// };
+// The 3 if else statements I used turned into functions below:
+//Below is a function for if the number is Odd or Even
+function isOddOrEvenFun(number) {
+  if (number % 2 === 0 && aNumber !== 0) {
+    //I'm defining a va
+    var isOddOrEvenFun = "This Number is EVEN.";
+  } else if (number % 2 === 1 || number % 2 === -1) {
+    var isOddOrEvenFun = "This Number is ODD.";
+  } else if (number === 0) {
+    var isOddOrEvenFun = "This Number is 0 so it's NOT EVEN OR ODD."
+  } else {
+    return ;
+  }
+  return isOddOrEvenFun;
+}
+//Below is the above functions split up
+function isOdd(number){
+  return (number % 2 === 1 || number % 2 === -1)
+}
+function isEven(number){
+  return (number % 2 === 0) && (number !== 0)
+}
+//Below function is just for adding 100 to a number ONLY WORKS WITH NUMBERS. - returns a string but I can change it
+// function addOneHundooFun(number) {
+//   if ((typeof number === "number") && (isNaN(number) === false)) {
+//     var aNumberPlusHundooFun = number + 100;
+//     var aNumberPlusHundooStringFun = number + " + 100 is " + aNumberPlusHundooFun;
+//     // return number + 100
+//     return aNumberPlusHundooStringFun;
+//   }
+// };
+//Below if the function where the return is a number.
+function addOneHundooFunNum(number) {
+  if ((typeof number === "number") && (isNaN(number) === false)) {
+    return number + 100
+  } else {
+    return NaN
+  }
 };
-//
-if (typeof isOddOrEven === "undefined"){
-
-} else {
-  alert(isOddOrEven)
+//Tells if the number is positive or negative.
+function isPosOrNegFun(number){
+  if (number > 0) {
+    var isPosOrNegFun = "This Number is POSITIVE.";
+  } else if (number < 0) {
+    var isPosOrNegFun = "This Number is NEGATIVE.";
+  } else if(number === 0) {
+    var isPosOrNegFun = "this Number is 0 so it's NEITHER."
+  } else {
+    return ;
+  }
+  return isPosOrNegFun;
 }
-//
-if (typeof isPosOrNeg === "undefined"){
-
-} else {
-  alert(isPosOrNeg)
+//Going to turn this function above, into 2 different ones
+function isPositive(number){
+  return number > 0
 }
-//
-if (typeof isPosOrNeg === "undefined"){
-
-} else {
-  alert(aNumberPlusHundoo)
+function isNegative(number){
+  return number < 0
 }
-    // else if (aNumber % 2 === 0) {
-    //   var isOddorEven = "This number is EVEN."
-//     } else if (aNumber % 2 === 1) {
-//       var isOddorEven = "This number is ODD."
-//     }
-// }
+
+
+
+// //Below are the same alerts from before except using functions...
+if (isPositive(aNumber)){
+  alert("This Number is Positive")
+} else if (isNegative(aNumber)){
+  alert("This Number is Negative")
+}
+
+if ((typeof aNumber === "number") && (isNaN(aNumber) === false)) {
+  alert( aNumber + " + 100 is " + (addOneHundooFunNum(aNumber)));
+}
+
+if (isEven(aNumber)){
+  alert(aNumber + " is EVEN");
+}else if (isOdd(aNumber)){
+  alert(aNumber + " is ODD");
+}
