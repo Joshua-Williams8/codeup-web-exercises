@@ -294,7 +294,7 @@ function isNegative(number){
 
 
 
-// //Below are the same alerts from before except using functions...
+// //Below are the same alerts from before except using functions
 if (isPositive(aNumber)){
   alert("This Number is Positive")
 } else if (isNegative(aNumber)){
