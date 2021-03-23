@@ -50,24 +50,19 @@ console.log(analyzeColor(randomColor))
  */
 function analyzeColor(color){
   color = color.toLowerCase();
-  var result;
   switch (color) {
     case "blue" :
-      result = "Blue is the color of the ocean.";
-      return result;
+      return "Blue is the color of the ocean.";
       break;
     case "red" :
-      result = "Red is the color of robins";
-      return result;
+      return "Red is the color of robins";
       break;
     case "cyan" :
-      result = "Cyan is a different color I guess";
-      return result;
+      return "Cyan is a different color I guess";
       break;
     default :
-      result = color + " is a color I don't know a lot about.";
-      return result;
-
+      return color + " is a color I don't know a lot about.";
+      break;
   }
 }
 
