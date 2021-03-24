@@ -97,20 +97,20 @@ function analyzeColor(color){
  */
 function calculateTotal(luckNumber,itemPrices) {
   if (luckNumber === 0) {
-    return itemPrices
+    return itemPrices.toFixed(2)
     //I could remove the first if statement.
   } else if (luckNumber === 1) {
-    return itemPrices - (itemPrices * .10)
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .10)
   } else if (luckNumber === 2) {
-    return itemPrices - (itemPrices * .25)
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .25)
   } else if (luckNumber === 3) {
-    return itemPrices - (itemPrices * .35)
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .35)
   } else if (luckNumber === 4) {
-    return itemPrices - (itemPrices * .50)
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .50)
   } else if (luckNumber === 5) {
-    return 0
+      return 0.00
   } else {
-    return itemPrices
+      return itemPrices.toFixed(2)
     // return luckyNumber + " This number is not a lucky number. The total today is: $" + itemPrices
   }
 }
@@ -118,24 +118,24 @@ function calculateTotal(luckNumber,itemPrices) {
 function calculateTotalSwitch(luckNumber,itemPrices) {
   switch (luckNumber) {
     case 0 :
-      return itemPrices
+      return itemPrices.toFixed(2)
       break;
     case 1 :
-      return itemPrices - (itemPrices * .10);
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .10);
       break;
     case 2 :
-      return itemPrices - (itemPrices * .25);
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .25);
     case 3 :
-      return itemPrices - (itemPrices * .35);
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .35);
       break;
     case 4 :
-      return itemPrices - (itemPrices * .50);
+      return itemPrices.toFixed(2) - (itemPrices.toFixed(2) * .50);
       break;
     case 5 :
-      return 0;
+      return 0.00;
       break;
     default:
-      return itemPrices
+      return itemPrices.toFixed(2)
   }
 }
 /**
@@ -146,9 +146,9 @@ function calculateTotalSwitch(luckNumber,itemPrices) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 // var billTotal = parseFloat(prompt("What is your bill for your items?"));
-// alert("Your lucky number was: " + luckyNumber + " Your price before your discount is : $" + billTotal + " With your lucky number's discount your new total is: $" + calculateTotal(luckyNumber,billTotal));
+// alert("Your lucky number was: " + luckyNumber + " Your price before your discount is: $" + billTotal + " With your lucky number's discount your new total is: $" + calculateTotal(luckyNumber,billTotal));
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -175,23 +175,23 @@ if (giveANumber === false ) {
 
   //Below is if the user did say yes to our confirm, then I want to create a variable called aNumber, and give them a prompt to fill with that number.
 } else if (giveANumber === true ) {
-    var aNumber = parseFloat(prompt("Please enter a number."))
+  var aNumber = parseFloat(prompt("Please enter a number."));
   //The if statement below is if the user doesn't enter a number in the prompt then I alert them they didn't.
-    if (isNaN(aNumber) === true) {
-    alert("You did not enter a number")
-      //I didn't use an else statement, but if I did, I would leave it blank because I don't want to execute any code.
-    }
+  if (isNaN(aNumber) === true) {
+    alert("You did not enter a number");
+    //I didn't use an else statement, but if I did, I would leave it blank because I don't want to execute any code.
+  }
 }
 //Below are the other statements required for the alerts.
 //If the number from the prompt earlier divided by 2 doesn't have a remainder then...
 if (aNumber % 2 === 0 && aNumber !== 0) {
-  //I'm defining a va
-  var isOddOrEven = "This Number is EVEN.";
-} else if (aNumber % 2 === 1 || aNumber % 2 === -1 ) {
-  var isOddOrEven = "This Number is ODD.";
-} else if(aNumber === 0) {
-  var isOddOrEven = "This Number is 0 so it's NOT EVEN OR ODD."
-} else {
+    //I'm defining a variable for the statements later.
+    var isOddOrEven = "This Number is EVEN.";
+  } else if (aNumber % 2 === 1 || aNumber % 2 === -1 ) {
+    var isOddOrEven = "This Number is ODD.";
+  } else if(aNumber === 0) {
+    var isOddOrEven = "This Number is 0 so it's NOT EVEN OR ODD."
+  } else {
 
 }
 //I need the second half of this && statement because if the aNumber value is NaN, then I don't want to create the variable.
@@ -201,12 +201,12 @@ if ((typeof aNumber === "number") && (isNaN(aNumber) === false)) {
 }
 //
 if (aNumber > 0) {
-  var isPosOrNeg = "This Number is POSITIVE.";
-} else if (aNumber < 0) {
-  var isPosOrNeg = "This Number is NEGATIVE.";
-}  else if(aNumber === 0) {
-  var isPosOrNeg = "This Number is 0 so it's NOT POSITIVE OR NEGATIVE."
-} else {
+    var isPosOrNeg = "This Number is POSITIVE.";
+  } else if (aNumber < 0) {
+    var isPosOrNeg = "This Number is NEGATIVE.";
+  }  else if(aNumber === 0) {
+    var isPosOrNeg = "This Number is 0 so it's NOT POSITIVE OR NEGATIVE."
+  } else {
 
 }
 //Below are the original alerts for the stuff, but they are commented out for the function version alerts.
@@ -291,9 +291,9 @@ function isNegative(number){
 
 // //Below are the same alerts from before except using functions
 if (isPositive(aNumber)){
-  alert("This Number is Positive")
-} else if (isNegative(aNumber)){
-  alert("This Number is Negative")
+    alert("This Number is Positive")
+  } else if (isNegative(aNumber)){
+    alert("This Number is Negative")
 }
 
 if ((typeof aNumber === "number") && (isNaN(aNumber) === false)) {
@@ -301,7 +301,7 @@ if ((typeof aNumber === "number") && (isNaN(aNumber) === false)) {
 }
 
 if (isEven(aNumber)){
-  alert(aNumber + " is EVEN");
-}else if (isOdd(aNumber)){
-  alert(aNumber + " is ODD");
+    alert(aNumber + " is EVEN");
+  }else if (isOdd(aNumber)){
+    alert(aNumber + " is ODD");
 }
