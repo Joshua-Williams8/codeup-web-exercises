@@ -1,4 +1,12 @@
 "use strict"
+//Add 2 numbers together, but only adds NUMBERS, anything else will return NaN
+function add(x,y) {
+  if (isNaN((parseFloat(x) + parseFloat(y))) === true ) {
+    return NaN
+  } else {
+    return parseFloat(x) + parseFloat(y)
+  }
+}
 //Check to see if a number is odd.
 function isOdd(number){
   return number % 2 === 1 || number % 2 === -1;
@@ -187,3 +195,7 @@ function testBoo(num) {
       return false;
   }
 }
+//Something important for doing test for NaN, you need to expect isNaN to be true, cause NaN cannot == NaN
+// it('"banana","split" input should return NaN',function() {
+//     expect(Number.isNaN(add("banana","split"))).toBe(true);
+//   });
