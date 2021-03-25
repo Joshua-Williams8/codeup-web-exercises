@@ -45,8 +45,14 @@ function isFalsy(input){
   return input  == false;
 }
 function isVowel(letter){
-  letter = letter.toLowerCase();
-  return ( letter === "a") || ( letter === "e") || ( letter === "i") ||( letter === "o") || ( letter === "u");
+  if (typeof letter !== "string") {
+    return false
+  } else if (letter.length === 1) {
+    letter = letter.toLowerCase();
+    return (letter === "a") || (letter === "e") || (letter === "i") || (letter === "o") || (letter === "u");
+  } else {
+    return false
+  }
 }
 function isConsonant(letter){
   letter = letter.toLowerCase();
@@ -169,3 +175,15 @@ function cubeRoot(x){
   return Math.cbrt(x)
 }
 
+function testBoo(num) {
+  switch (num) {
+    case (num == parseFloat(num)) :
+      return true
+      break;
+    case 1 :
+      return true
+    break;
+    default:
+      return false;
+  }
+}
