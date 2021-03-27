@@ -1,3 +1,4 @@
+"use strict";
 // //Declaring a variable to hold 10
 // var test = 10
 // //while 10 is greater than or equal to 0 execute the next lines
@@ -26,6 +27,7 @@ var test = 1
 //   console.log(test);
 //   test = test * 2;
 // } while (test <= 65536);
+/*
 
 // This is how you get a random number between 50 and 100
 var allCones = Math.floor(Math.random() * 50) + 50;
@@ -61,6 +63,27 @@ do {
   }
 } while (allCones > 0);
 // command shift / to uncomment a block comment. or command shift for a line comment
+*/
 
+//example while loop we are going ot turn into a for loop
+// var count = 0;
+// while(count <= 20 ){
+//   count = count + 1;
+//   console.log(count);
+//   //count = count + 1;
+//   //for the comment above notice the difference output for infront or behind...
+// }
+
+for(var count = 0; count <= 20; count = count+1){
+  console.log(count)
+
+}
+
+function showMultiplicationTable(num) {
+  for(var table = 1; table <=10; table++){
+
+  }
+}
+//discord link https://discord.gg/fYmn5PEP
 
 
