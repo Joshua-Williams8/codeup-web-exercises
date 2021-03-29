@@ -8,7 +8,7 @@ function add(x,y) {
   }
 }
 function concat(x,y) {
-  return toString(x) + toString(y)
+  return x.toString() + y.toString()
 }
 //Check to see if a number is odd.
 function isOdd(number){
