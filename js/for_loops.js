@@ -2,9 +2,8 @@
 //1 was creating this file, 2 is below. COMPLETE
 function showMultiplicationTable(num) {
   for(var tab = 1; tab <=10; tab++){
-    console.log(num + " times " + tab +" is: " + (num * tab))
+    console.log(num + " times " + tab +" is: = " + (num * tab));
   }
-
 }
 //3 is COMPLETE
 //This is for 3, the 5 is the highest we go, the 1 is the lowest or first number...
@@ -35,13 +34,14 @@ function isEven(number) {
 //   //console.log(iString) //"3"
 //   //console.log(i) //3
 //   if (i === 1) {
-//     //console.log("This is 1")
+//     //console.log("This is 1") - longer version of logic
 //   } else {
-//     var ii = i // ii = 3
+//     //var ii = i // ii = 3
 //     while (iString.length < i) { // 1 < 3
 //       //console.log(ii) // 3
-//       iString = concat(ii, i) //"33"
-//       ii = iString
+//       //iString = concat(ii, i) //"33" - longer version logic
+//       //ii = iString - longer logic stuff
+//       iString = concat(iString, i) //"33"
 //       //console.log(iString)
 //     }
 //     //console.log(iString)
@@ -50,9 +50,9 @@ function isEven(number) {
 // }
 //function below is for one above.
 function concat(x,y){
-  x = x.toString()
-  y = y.toString()
-  return x + y
+  x = x.toString();
+  y = y.toString();
+  return x + y;
 }
 //BELOW FUNCTIONS ARE FOR FUNCTION ABOVE.
 //Check to see if a number is odd.
