@@ -57,11 +57,11 @@ console.log(names.length)
     function second(array){
       return array[1]
     }
-    function third(array){
-      return array[2]
+    function last(array){
+      return array[array.length - 1]
     }
   console.log(first(names))
   console.log(second(names))
-  console.log(third(names))
+  console.log(last(names))
 
 })();
