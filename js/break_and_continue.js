@@ -46,9 +46,18 @@ var numberToStopAt = 5;
 //   console.log("Here is an odd number: " + i)
 // }
 var skipHere
-while ((isNaN(skipHere)) || (skipHere % 2 !== 1) || (skipHere > 50) || (skipHere < 1)) {
-  var skipHere = parseFloat(prompt("Pick an ODD number between 1 and 50."))
+// while ((isNaN(skipHere)) || (skipHere % 2 !== 1) || (skipHere > 50) || (skipHere < 1)) {
+//   var skipHere = parseFloat(prompt("Pick an ODD number between 1 and 50."))
+// }
+//below uses the break, as requested lol.
+while (skipHere !== "Never gonna equal this.") {
+  var skipHere = parseFloat(prompt("Pick an ODD number between 1 and 50."));
+  if (!(isNaN(skipHere)) && (skipHere % 2 === 1) && (skipHere < 50) && (skipHere > 1)) {
+    //console.log("About to break out")
+    break;
+  }
 }
+
 console.log("Number to skip is: " + skipHere)
 console.log(" ")
 for(var i = 1; i <=50; i++) {
