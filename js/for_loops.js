@@ -1,4 +1,5 @@
 "use strict"
+
 //1 was creating this file, 2 is below. COMPLETE
 function showMultiplicationTable(num) {
   for(var tab = 1; tab <=10; tab++){
@@ -28,26 +29,26 @@ function isEven(number) {
 }
 
 //4 COMPLETED i is what we multiply by? 4 is hard..? I did it on my own.
-// for(var i = 1; i < 10; i++) {
-//   //I want the string.length to be equal to the i...
-//   var iString = i.toString()
-//   //console.log(iString) //"3"
-//   //console.log(i) //3
-//   if (i === 1) {
-//     //console.log("This is 1") - longer version of logic
-//   } else {
-//     //var ii = i // ii = 3
-//     while (iString.length < i) { // 1 < 3
-//       //console.log(ii) // 3
-//       //iString = concat(ii, i) //"33" - longer version logic
-//       //ii = iString - longer logic stuff
-//       iString = concat(iString, i) //"33"
-//       //console.log(iString)
-//     }
-//     //console.log(iString)
-//   }
-//   console.log(iString)
-// }
+for(var i = 1; i < 10; i++) {
+  //I want the string.length to be equal to the i...
+  var iString = i.toString()
+  //console.log(iString) //"3"
+  //console.log(i) //3
+  // if (i === 1) { - last refactor start
+  //   //console.log("This is 1") - longer version of logic
+  // } else { - last refactor - end. - (one single line below)
+    //var ii = i // ii = 3
+    while (iString.length < i) { // 1 < 3
+      //console.log(ii) // 3
+      //iString = concat(ii, i) //"33" - longer version logic
+      //ii = iString - longer logic stuff
+      iString = iString + i; //"33" //was iString = concat(iString, i); but I don't really need the function.
+      //console.log(iString)
+    //} - last bit of refactoring - line
+    //console.log(iString)
+  }
+  console.log(iString)
+}
 //function below is for one above.
 function concat(x,y){
   x = x.toString();
