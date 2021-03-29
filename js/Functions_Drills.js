@@ -7,13 +7,29 @@ function add(x,y) {
     return parseFloat(x) + parseFloat(y)
   }
 }
+function concat(x,y) {
+  return toString(x) + toString(y)
+}
 //Check to see if a number is odd.
 function isOdd(number){
-  return number % 2 === 1 || number % 2 === -1;
+  return parseFloat(number) % 2 === 1 || parseFloat(number) % 2 === -1;
 }
 //Check to see if a number is even.
 function isEven(number) {
   return parseFloat(number) % 2 === 0;
+}
+//Below are the same 2 functions above but they return string statements.
+function isOdd(number) {
+  if( parseFloat(number) % 2 === 1 || parseFloat(number) % 2 === -1) {
+    return number + " is odd."
+  }
+}
+//Check to see if a number is even.
+function isEven(number) {
+  if (parseFloat(number) % 2 === 0) {
+    return number + " is even."
+  }
+
 }
 //returns input as provided
 function identity(input){

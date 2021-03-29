@@ -66,37 +66,17 @@ do {
 */
 
 //example while loop we are going ot turn into a for loop
-// var count = 0;
-// while(count <= 20 ){
-//   count = count + 1;
-//   console.log(count);
-//   //count = count + 1;
-//   //for the comment above notice the difference output for infront or behind...
-// }
+var count = 0;
+while(count < 20 ){
+  count = count + 1;
+  console.log(count);
+  //count = count + 1;
+  //for the comment above notice the difference output for infront or behind...
+}
 
 // for(var count = 0; count <= 20; count = count+1){
 //   console.log(count)
 //
 // }
 
-function showMultiplicationTable(num) {
-  for(var tab = 1; tab <=10; tab++){
-    console.log(num + " times " + tab +" is: " + (num * tab))
-  }
 
-}
-//3 I have to do some stuff for the random number...
-//This is for 3, the 5 is the highest we go, the 1 is the lowest or first number...
-var randomNumTest = Math.floor(Math.random() * 5) + 1;
-
-var randomNumReal = Math.floor(Math.random() * 200) + 20;
-//i is what we multiply by? 4 is hard... come back
-// for(var i = 1; i < 10; i++) {
-//
-// }
-//for loops 5
-for(var fi = 0; fi < 20; fi++){
-  var minusFive = 5 * fi
-  var ugh = 100 - minusFive
-  console.log(ugh)
-}
