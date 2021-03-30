@@ -215,3 +215,13 @@ function testBoo(num) {
 // it('"banana","split" input should return NaN',function() {
 //     expect(Number.isNaN(add("banana","split"))).toBe(true);
 //   });
+//Refer to iterating.js for some other review for array functions if needed.
+function first(array){
+  return array[0]
+}
+function second(array){
+  return array[1]
+}
+function last(array){
+  return array[array.length - 1]
+}
