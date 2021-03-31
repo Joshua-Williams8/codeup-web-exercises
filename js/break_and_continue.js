@@ -50,7 +50,8 @@ var skipHere
 //   var skipHere = parseFloat(prompt("Pick an ODD number between 1 and 50."))
 // }
 //below uses the break, as requested lol.
-while (skipHere !== "Never gonna equal this.") {
+//If we put while(true) makes the while always go until, we make the if true, and bit executes the break.
+while (true) {
   var skipHere = parseFloat(prompt("Pick an ODD number between 1 and 50."));
   if (!(isNaN(skipHere)) && (skipHere % 2 === 1) && (skipHere < 50) && (skipHere > 1)) {
     //console.log("About to break out")

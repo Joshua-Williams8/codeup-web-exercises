@@ -23,9 +23,18 @@ var planetsArray = planetsString.split("|")
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+      //useful for with document.getElementById("planetsBR").innerHTML = brPlanets?
 var planetsBR = planetsArray.join("<br>")
   console.log(planetsBR);
   //for turning arrays into strings, and then into text on html?
   var bonusPlanets = "<ul>" + "<li>" + planetsArray.join("</li><li>") + "</li>" + "</ul>";
   console.log(bonusPlanets);
+  //Jay's idea was a better way to to it also
+  var planetsList = "<ul>"
+  planetsArray.forEach(function(planet) {
+    planetsList = planetsList + "<li>" + planet + "</li>"
+  })
+  var planetsList = planetsList + "</ul>"
+  console.log(planetsList)
 })();
+

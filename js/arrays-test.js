@@ -144,6 +144,9 @@ function removeAtIndex(array, index){
   var arr2 = array.slice(index + 1);
   return arr1.concat(arr2)
 }
+console.log(blueGuys)
+console.log(blueGuys.unshift("sliver"))//notice how the log only returned the amount of items.
+console.log(blueGuys.shift())
 
 //splice method?
 //Allows we to delete,or replace?

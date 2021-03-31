@@ -113,25 +113,32 @@ function isLowerCase(letter){
   }
 }
 
-function hasLowerCase(word){
-if (isLowerCase(word.charAt(0))) {
-    return true;
-  } else if (isLowerCase(word.charAt(1))) {
-    return true;
-  } else if (isLowerCase(word.charAt(2))) {
-    return true;
-  } else if (isLowerCase(word.charAt(3))) {
-    return true;
-  } else if (isLowerCase(word.charAt(4))) {
-    return true;
-  } else if (isLowerCase(word.charAt(5))) {
-    return true;
-  // } else if (isLowerCase(word.charAt(word.length() - 1))) {
-  //   return true;
-  } else {
-    return false;
-  }
+function hasLowerCase(str){
+  return str.toUpperCase() !== str;
 }
+
+// function hasLowerCase(str) {
+//   return (/[a-z]/.test(str));
+// }
+// function hasLowerCase(word){
+// if (isLowerCase(word.charAt(0))) {
+//     return true;
+//   } else if (isLowerCase(word.charAt(1))) {
+//     return true;
+//   } else if (isLowerCase(word.charAt(2))) {
+//     return true;
+//   } else if (isLowerCase(word.charAt(3))) {
+//     return true;
+//   } else if (isLowerCase(word.charAt(4))) {
+//     return true;
+//   } else if (isLowerCase(word.charAt(5))) {
+//     return true;
+//   // } else if (isLowerCase(word.charAt(word.length() - 1))) {
+//   //   return true;
+//   } else {
+//     return false;
+//   }
+// }
 // var dude = "DUDEASFAF";
 // var mood = "moODqr";
 // var cap = "cap";
@@ -223,5 +230,38 @@ function second(array){
   return array[1]
 }
 function last(array){
-  return array[array.length - 1]
+  return array[array.length - 1];
+}
+function reverseString(string){
+  //below takes the string and splits each INDIVIDUAL CHARACTER into array elements
+  var stringArray = string.split("");
+  //takes the array from above and reverses it
+  var reverseStringArray = stringArray.reverse();
+  //below we return the a
+  return reverseStringArray.join("")
+  //we can also shorten this to string.split("").reverse().join("")
+}
+//
+//This is for 3, the 5 is the highest we go, the 1 is the lowest or first number...
+var randomNumTest = Math.floor(Math.random() * 5) + 1;
+
+function getRandomNumber(min,max){
+  return Math.floor(Math.random() * max) + min
+}
+
+function getHighestNumber(x,y,z){
+  x = parseFloat(x);
+  y = parseFloat(y);
+  z = parseFloat(z);
+  if (isNaN(x) || isNaN(y) || isNaN(z)){
+    return false;
+  } else if ((x === y) && (x === z)) {
+    return x;
+  } else if (((y > x) && (y > z)) || ((y === z) && (y > x)) || ((y === x) && (y > z))) {
+    return y;
+  } else if (((z > x) && (z > y)) || ((z === x) && (z > y)) || ((z === y) && (z > x))) {
+    return z;
+  } else if (((x > y) && (x > z)) || ((x === y) && (x > z)) || ((x === y) && (x > z))) {
+    return x;
+  }
 }
