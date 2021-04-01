@@ -10,6 +10,7 @@ function add(x,y) {
 function concat(x,y) {
   return x.toString() + y.toString()
 }
+
 //Check to see if a number is odd.
 function isOdd(number){
   return parseFloat(number) % 2 === 1 || parseFloat(number) % 2 === -1;
@@ -263,5 +264,18 @@ function getHighestNumber(x,y,z){
     return z;
   } else if (((x > y) && (x > z)) || ((x === y) && (x > z)) || ((x === y) && (x > z))) {
     return x;
+  }
+}
+function getHighestNumberStrToArray(x,y,z) {
+  x = parseFloat(x);
+  y = parseFloat(y);
+  z = parseFloat(z);
+  if (isNaN(x) || isNaN(y) || isNaN(z)){
+    return false;
+  } else {
+    //Math.max(x,y,z) is also an option.
+    var numArray = [x,y,z];
+    numArray = numArray.sort();
+    return numArray[2]
   }
 }
