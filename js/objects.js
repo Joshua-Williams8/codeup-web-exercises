@@ -75,6 +75,7 @@ console.log(person.sayHello())
      */
 var books = [
     {
+
       title: "Grey Book",
       author: {
         firstName: "Will",
@@ -151,7 +152,9 @@ books.forEach(function(book,index){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-function createBook(titleString,firstNameString,lastNameString){
+    //below is another way of doing the create book function by adding to the object itself, and putting
+//the function inside of the object.(since it's only associated with that object.)
+    books.createBook = function (titleString,firstNameString,lastNameString){
   books.push({title: titleString,author:{firstName: firstNameString, lastName: lastNameString},},);
     }
 //To add to an array you have to type it out as if you were defining it, but you use the .push(stuff) method
@@ -160,6 +163,7 @@ function createBook(titleString,firstNameString,lastNameString){
 //To remove or add from middle use .splice method. books.splice(index to start deleteing from, how many to delete, what to replace with)
 //You can also use .splice just to add to the middle if you use .splice(#,0,What you want to add.)
 var booksTest = [];
+    //below is the regular function way, I did at first above is the preferred way I believer
 function createBookTest(titleString,firstNameString,lastNameString){
   booksTest.push({title: titleString,author:{firstName: firstNameString, lastName: lastNameString},},);
 }
