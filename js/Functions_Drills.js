@@ -121,38 +121,14 @@ function hasLowerCase(str){
 // function hasLowerCase(str) {
 //   return (/[a-z]/.test(str));
 // }
-// function hasLowerCase(word){
-// if (isLowerCase(word.charAt(0))) {
-//     return true;
-//   } else if (isLowerCase(word.charAt(1))) {
-//     return true;
-//   } else if (isLowerCase(word.charAt(2))) {
-//     return true;
-//   } else if (isLowerCase(word.charAt(3))) {
-//     return true;
-//   } else if (isLowerCase(word.charAt(4))) {
-//     return true;
-//   } else if (isLowerCase(word.charAt(5))) {
-//     return true;
-//   // } else if (isLowerCase(word.charAt(word.length() - 1))) {
-//   //   return true;
-//   } else {
-//     return false;
-//   }
-// }
-// var dude = "DUDEASFAF";
-// var mood = "moODqr";
-// var cap = "cap";
-// console.log(isLowerCase(dude.charAt(4)));
-// console.log(isLowerCase(mood.charAt(4)));
-// console.log(isLowerCase(cap.charAt(4)));
+
 
 function isSpace(char) {
   return char === " ";
 }
 
 function isZero(num) {
-  return char === 0;
+  return num === 0;
 }
 
 function notZero(num) {
@@ -198,13 +174,107 @@ function modulo(x,y){
 function cube(x){
   return x ** 3
 }
-
+function square(x){
+  return x ** 2
+}
 function squareRoot(x){
   return x ** .5
 }
 
 function cubeRoot(x){
-  return Math.cbrt(x)
+  return Math.cbrt(x);
+}
+
+function invertSign(num){
+  num = parseFloat(num);
+  if (isNaN(num)) {
+    return false;
+  } else {
+    return num * -1;
+  }
+}
+function degreesToRadians(degrees){
+  return degrees * (Math.PI /180)
+}
+
+function radiansToDegrees(radians){
+  return radians * (180/Math.PI)
+}
+function isBlank(input){
+  return (input.split(" ").join("") === "")
+}
+
+function trim(string){
+  return string.trim();
+}
+function areEqual(x,y){
+  return x==y
+}
+function areIdentical(x,y){
+  return x===y
+}
+function not(input){
+  return !input
+}
+function notNot(input){
+  return !!input
+}
+function and(x,y){
+  return x && y
+}
+function or(x,y){
+  return x || y
+}
+
+function reverseString(string){
+  //below takes the string and splits each INDIVIDUAL CHARACTER into array elements
+  var stringArray = string.split("");
+  //takes the array from above and reverses it
+  var reverseStringArray = stringArray.reverse();
+  //below we return the a
+  return reverseStringArray.join("")
+  //we can also shorten this to string.split("").reverse().join("")
+}
+function absoluteValue(x){
+  if(x < 0) {
+    return -x
+  } else {
+    return x
+  }
+}
+function rollDice(sides){
+  return Math.floor(Math.random() * sides) + 1;
+}
+function returnTwo(){
+  return 2;
+}
+function getRandomNumber(min,max){
+  return Math.floor(Math.random() * max) + min;
+}
+function firstString(string){
+  return string.charAt(0);
+}
+function lastString(string){
+  return string.charAt(string.length - 1);
+}
+function restString(string){
+  var stringArray = string.split("");
+  stringArray.shift();//I could do .splice(0,1)
+  console.log(stringArray)
+  return stringArray.join("");
+}
+function isNumeric(input){
+  return typeof input === "number"
+}
+function countString(string){
+  return string.length;
+}
+function sumOfSquares(x,y){
+  return add(square(x),(square(y)))
+}
+function doMath(operatorString,a,b){
+  var aOB = a + operatorString + b
+  return eval(aOB)
 }
 
 function testBoo(num) {
@@ -219,36 +289,27 @@ function testBoo(num) {
       return false;
   }
 }
+
 //Something important for doing test for NaN, you need to expect isNaN to be true, cause NaN cannot == NaN
 // it('"banana","split" input should return NaN',function() {
 //     expect(Number.isNaN(add("banana","split"))).toBe(true);
 //   });
 //Refer to iterating.js for some other review for array functions if needed.
-function first(array){
+function firstArray(array){
   return array[0]
 }
-function second(array){
+function secondArray(array){
   return array[1]
 }
-function last(array){
+function lastArray(array){
   return array[array.length - 1];
 }
-function reverseString(string){
-  //below takes the string and splits each INDIVIDUAL CHARACTER into array elements
-  var stringArray = string.split("");
-  //takes the array from above and reverses it
-  var reverseStringArray = stringArray.reverse();
-  //below we return the a
-  return reverseStringArray.join("")
-  //we can also shorten this to string.split("").reverse().join("")
-}
+
 //
 //This is for 3, the 5 is the highest we go, the 1 is the lowest or first number...
 var randomNumTest = Math.floor(Math.random() * 5) + 1;
 
-function getRandomNumber(min,max){
-  return Math.floor(Math.random() * max) + min
-}
+
 
 function getHighestNumber(x,y,z){
   x = parseFloat(x);
@@ -279,3 +340,4 @@ function getHighestNumberStrToArray(x,y,z) {
     return numArray[2]
   }
 }
+

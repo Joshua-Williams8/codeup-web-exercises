@@ -49,7 +49,7 @@ console.log(person.sayHello())
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320},
     ];
-    //You need to have the object upfront as usual, the next thing after shopper, would be what iteraction were on.
+    //You need to have the object upfront as usual, the next thing after shopper, would be what iteration were on.
     shoppers.forEach(function(shopper) {
       //You pull properties you need to use the thing defined above, with a .property in this case name...
       //console.log(shopper.name + " shopper?");
@@ -140,7 +140,7 @@ books.forEach(function(book,index){
   console.log("---");
   console.log("Book # " + (index + 1));
   console.log("Title: " + book.title);
-  console.log("Author: " + book.author.firstName, book.author.lastName)
+  console.log("Author: " + book.author.firstName, book.author.lastName);
 });
     /**
      * Bonus:
