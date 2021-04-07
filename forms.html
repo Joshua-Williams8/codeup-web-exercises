@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veridian Registration Page</title></title>
+</head>
+<body>
+<!-- https://request-inspector.glitch.me/ -->
+<h1>Register With Us!</h1>
+  <hr>
+<form method="POST" action="https://request-inspector.glitch.me/">
+  <div>
+    <h2>Email and Password</h2>
+
+    <label for="email">Username</label>
+      <input id="email" name="email" type="text" placeholder="Enter Email">
+      <ul>
+        <li>Email cannot contain any inappropriate language.</li>
+      </ul>
+  <br>
+    <label for="passworda">Password</label>
+      <input id="passworda" name="passworda" type="password" placeholder="Enter Password">
+      <ul>
+        <li>Password must include at least one type of each character. (UPPER CASE, lower case,a symbol, and a number.</li>
+        <li>Password cannot be the same as the username.</li>
+        <li>Password must be at least 6 characters.</li>
+        <li>Password cannot contain any spaces.</li>
+      </ul>
+
+  </div>
+  <hr>
+  <div>
+    <h2>Bio</h2>
+      <label for="bio">Tell us about yourself.</label>
+        <br>
+        <textarea id="bio" name="bio" type="text" rows="20" cols="70"></textarea>
+      <!-- Stuff in between the tags above gets put in the box value by default. -->
+        <br>
+
+  </div>
+  <hr>
+  <div>
+    <h3>How did you find out about us?</h3>
+      <label><input type="radio" id="AdsA" name="Ads" value="billboard">Billboards</label>
+      <label><input type="radio" id="AdsB" name="Ads" value="radio ad">Radio Advertisement</label>
+      <label><input type="radio" id="AdsC" name="Ads" value="internet ad">Internet Advertisement</label>
+      <label><input type="radio" id="AdsD" name="Ads" value="other">Other</label>
+  </div>
+<!--  <div>-->
+<!--    <h3>How did you find out about us?</h3>-->
+<!--    <label><input type="checkbox" id="AdsAC" name="AdsC" value="billboard">Billboards</label>-->
+<!--    <label><input type="checkbox" id="AdsBC" name="AdsC" value="radio ad">Radio Advertisement</label>-->
+<!--    <label><input type="checkbox" id="AdsCC" name="AdsC" value="internet ad">Internet Advertisement</label>-->
+<!--    <label><input type="checkbox" id="AdsDC" name="AdsC" value="other">Other</label>-->
+<!--  </div>-->
+  <div>
+    <h3>What web browser are you using?</h3>
+    <label for="browser">Please select from the dropdown.</label>
+      <select id="browser" name="browser">
+        <option value="google-chrome">Google Chrome</option>
+        <option value="firefox">Firefox</option>
+        <option value="edge">Edge</option>
+        <option value="ie">Internet Explorer</option>
+        <option value="safari">Safari</option>
+      </select>
+  </div>
+  <hr>
+  <div>
+    <button type="submit">Submit Registration Form</button>
+  </div>
+</form>
+</body>
+</html>

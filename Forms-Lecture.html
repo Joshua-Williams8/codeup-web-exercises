@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms Lecture</title>
+</head>
+<body>
+  <form method="POST" action="https://request-inspector.glitch.me/">
+    <!-- <form> is the element to create a form
+      <method is the attribute that defines it would send that information? GET - will have it in the url, usually for search browsers POST - will embed it? and send it that information over to the link specified in the action attribute -->
+    <!--https://request-inspector.glitch.me/?username=adsa&password=da
+      The ? is the first part of the GET request, showing the username name, and what it was, the & shows the next field.-->
+    <div>
+      <label for="username">Username</label>
+      <!-- label element says what will appear with the input box, whether that maybe above it or next to it -->
+
+      <!-- the FOR points to the ID-->
+      <input id="username" name="username" type="text" placeholder="Enter Username here">
+      <!-- You can pre input a value by putting the value="Prefillled text" -->
+      <!-- You can use disabled attribute to disable an input bucko-->
+      <!-- You could use this with a hidden input, and to show the user a box that's "prefilled"?-->
+      <!--ID is the important part, but it's best practice to have the IDs an NAMEs match -->
+      <!-- input element defines an input, use the attribute id to set an ID on it as a refernce point, name is needed to define what that information is described as, but you usually want the ID to be the same as the name, type is the type of input this is, can be text, submit and etc... text just shows the information as a user types it, place holder shows up in the box to help guide the user into what to input, placeholder is text that is in the background (not
+      prefilled)-->
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter Password here">
+    </div>
+    <div>
+      <button type="submit">Login</button>
+      <!-- <button> will create a button that is usable to forward the user to a link, if it has a type as submit it will send the user to the link referenced in the <form> element, the text inbetween the button open/close will appear as the button's text-->
+      <!-- You can also user <input type="submit" value="BUTTONTEXT"> to create a button for pushing the data to the link refreshed in the <form> element but this isn't customizable as a button element, you can use the value attribute to change the text, but... button is better tbh.-->
+    </div>
+  </form>
+  <hr>
+  <h2>Compose an Email</h2>
+    <form method="POST" action="https://request-inspector.glitch.me">
+      <div>
+        <label for="to">To</label>
+        <input id="to" name="to" type="text" placeholder="Reciver's Email addresses">
+      </div>
+      <div>
+        <label for="from">From</label>
+        <input id="from" name="from" type="text" placeholder="Sender's email address">
+      </div>
+      <div>
+        <label for="subject">Subject</label>
+        <p><textarea id="subject" name="subject" rows="1" cols="70"placeholder="Email Subject"></textarea></p>
+      </div>
+      <div>
+        <label for="body">Body</label>
+        <p><textarea id="body" name="body" rows="20" cols="70" placeholder="Email here"></textarea></p>
+        <!-- <textarea> is for creating larger textboxes, you can define the rows and column, but you also need a name/id for it to send the information and define it-->
+        <!-- hidden type attribute doesn't display the content for the user, not sure what it's for except for maybe tokens?-->
+      </div>
+      <div>
+        <label><input type="checkbox" id="save_copy" name="save_copy" value="yes" checked>  Save copy to sent folder?</label>
+      </div>
+      <div>
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  <h2>Multiple Choice Test</h2>
+    <form method="POST" action="https://request-inspector.glitch.me">
+      <p>What color is also a metal?</p>
+      <!-- <p> provides spacing above and below, where <div> would keep it single spaced? prefer the way <p> looks with the spacing than <div> -->
+        <label><input type="radio" name="q1" id="1A" value="gold">Gold</label>
+        <label><input type="radio" name="q1" id="1B" value="green">Green</label>
+        <label><input type="radio" name="q1" id="1C" value="brown">Brown</label>
+        <label><input type="radio" name="q1" id="1D" value="blue">Blue</label>
+      <p>What is my first name</p>
+        <label><input type="radio" name="q2" id="2A" value="bryan">Bryan</label>
+        <label><input type="radio" name="q2" id="2B" value="treyvon">Treyvon</label>
+        <label><input type="radio" name="q2" id="2C" value="joshua">Joshua</label>
+        <label><input type="radio" name="q2" id="2D" value="chris">Chris</label>
+      <!-- You could also put values like "wrong 1,2... to display why it's wrong and what's right -->
+      <p>What are good laptop brands? (Select all that apply)</p>
+      <!-- Send stuff as an array for each answer chosen-->
+        <label><input type="checkbox" id="lt1" name="lt[]" value="toshiba">Toshiba</label>
+        <label><input type="checkbox" id="lt2" name="lt[]" value="dell">Dell</label>
+        <label><input type="checkbox" id="lt3" name="lt[]" value="macbook">MacBook</label>
+        <label><input type="checkbox" id="lt4" name="lt[]" value="Alienware">Alienware</label>
+      <!-- You could also use the checkbox for if users want to be signed up for a newsletter? also You can put the CHECKED attribute to automatically check a box. -->
+      <p>Which numbers are even?</p>
+        <label for="evennum">Select all the even numbers.</label>
+        <select id="evennum" name="evennum" multiple>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="0">Zero</option>
+          <option value="72">Seventy Two</option>
+        </select>
+      <p><button type="submit">Submit Answers</button></p>
+    </form>
+  <h2>Select Testing</h2>
+    <form method="POST" action="https://request-inspector.glitch.me">
+      <p>The egg came before the chicken?</p>
+      <label for="chickenegg">Select Yes or No please.</label>
+      <select id="chickenegg" name="chickenegg">
+        <option value="1">Yes</option>
+        <option value="0" selected>No</option>
+      </select>
+      <p><button type="submit">Submit Answers</button></p>
+    </form>
+<!-- You can pass on hidden information... -->
+<!--You can put <input name="Test" type="hidden"> and you don't need a label because you don't see it. This is useful because you want to hang oon to information that you don't want to be seen by the user., like an order ID -->
+</body>
+</html>
