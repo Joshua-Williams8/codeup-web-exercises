@@ -385,7 +385,7 @@ function bitwiseAND(n1, n2) {
   });
   //After finishing the loops we want to reconvert our array into a string, and then into a number. (not sure what the use of this is yet but it's good practice)
   //console.log(resultArr)
-var result = parseInt(resultArr.join(""),2)
+  var result = parseInt(resultArr.join(""),2)
   return result
 }
 //Show these tomorrow and ASK ABOUT THE REGULAR EXPRESSION STUFF PLEASE.

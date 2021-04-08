@@ -3,12 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome</title>
+<!--  <link rel="stylesheet"-->
+<!--        href="https://fonts.googleapis.com/css2?family=Crimson+Pro">-->
+  <link rel="stylesheet" href="css/style.css">
+<!--  <style>-->
+<!--    .fancy-header {-->
+<!--      color: blue; /* single line comment */-->
+<!--      text-decoration: underline;-->
+<!--    }-->
+<!--  </style>-->
 </head>
 <body>
-  <a id="top"></a>
-  <h1>Welcome to the Veridian Dynamics!</h1>
-    <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology.</em></strong></p>
-  <hr>
+  <header>
+    <h1 class ="fancy-header">Welcome to the Veridian Dynamics!</h1>
+    <a id="top"></a>
+  </header>
+  <main>
+    <p class="bottom-border" >At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology.</em></strong></p>
     <section>
       <h2>Core Values</h2>
         <ul>
@@ -29,22 +40,28 @@
           <li>Increase Business by 30%</li>
         </ul>
     </section>
-  <hr>
+    <hr>
     <section>
       <h2>Company Vision</h2>
-        <img src="img/Desk-com.jpeg">
-        <img src="img/soldier-sunset.jpeg">
-        <img src="img/water-sunset.jpeg">
-        <img src="img/b-w-buildings.jpeg">
-      <h2>Our Product</h2>
-        <table>
+      <table class="imageTable">
+        <tr>
+          <td><img src="img/Desk-com.jpeg" alt="Desk"></td>
+          <td><img src="img/soldier-sunset.jpeg" alt="People Sunset"></td>
+        </tr>
+        <tr>
+          <td><img src="img/water-sunset.jpeg" alt="Water Sunset"></td>
+          <td><img src="img/b-w-buildings.jpeg" alt="Black and white office"></td>
+        </tr>
+      </table>
+      <h2>Our Products</h2>
+        <table class="textTable">
           <tr>
             <th>Plan</th>
             <th>Price</th>
             <th>Features</th>
           </tr>
           <tr>
-            <td>Starer</td>
+            <td>Starter</td>
             <td>$99</td>
             <td>Base Technology</td>
           </tr>
@@ -53,16 +70,18 @@
             <td>$199</td>
             <td>Additional Features</td>
           </tr>
-          <tr>
+          <tr class ="redText">
             <td>Premium</td>
             <td>$499</td>
             <td>Unlimited Support</td>
           </tr>
         </table>
     </section>
+ </main>
   <br>
-    <footer><em><small>All Products come with our quality guarantee<sup>TM</sup>.</small></em></footer>
+  <footer><em><small>All Products come with our quality guarantee<sup>TM</sup>.</small></em>
   <br>
     <a href="#top">Go to the top of the page.</a>
+  </footer>
 </body>
 </html>

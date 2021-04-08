@@ -1,0 +1,98 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');*/
+
+/*Typically you want the more generally rules at the top */
+/* below is an example to get it to work from font-family */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url(../img/HelloBack.png);
+  background-color: #a8ccdd;
+  background-size: 50%;
+  background-repeat: repeat, round;
+}
+.bottom-border{
+  border-bottom: black 2px solid
+}
+/* .. is the symbol for up, use the double dot... Gonna test for images.*/
+h1, h2{
+  color: #030947;
+  text-decoration: underline;
+}
+h1 {
+  text-align: center;
+}
+ul {
+  list-style: square;
+  list-style: linear-gradient(#f0f8ff,darkblue);
+}
+table.imageTable {
+  background-color: black;
+}
+table.textTable tr,table.textTable th,table.textTable td{
+  text-align: center;
+  border: black 1px solid;
+  background-color: #F0F8FF1A;
+  /* Extra last 2 on this hex-decimal are for opacity.*/
+}
+table.textTable {
+  width: 50%;
+  table-layout: auto;
+  margin: auto;
+  background-color: #F0F8FF1A;
+}
+table.textTable th {
+  font-size: 150%;
+}
+table.textTable td {
+  font-size: 100%;
+}
+table.textTable tr {
+padding: 10%
+}
+a:link {
+  color:red;
+}
+a:active {
+  color:black;
+}
+a:visited {
+  color:#800903;
+}
+a:hover{
+  color:purple;
+}
+.redText{
+  color: firebrick;
+  font-size: 1.5em;
+}
+
+* {
+  /*means every single element  root also tags the entire html.*/
+}
+
+
+/* For classes you put a . before the class name.*/
+.Test-Class {
+  color: purple; /* single line comment */
+  text-decoration: underline;
+}
+/* for IDs you put a # before the ID name (typically for a specific item not to be used as liberally as a class.*/
+/* best practice is to give a series of preferences, and then usually have a class at the end.*/
+#TestID {
+  font-family: Chalkboard, Helvetica,sans-serif ;
+}
+/* for just a type of html element I just put that element type I want  */
+/* You can add mutliple elements with a certain style if you want.*/
+Testelements {
+  /* I don't want do do anything yet */
+}
+/* For some element types there certain other options available like below fo example when you hover over a link.*/
+a:visited {
+  /*Will do this to a link that's been clicked, or visited.*/
+}
+/* Below is for nesting styles depending on where stuff is at */
+TestParent>TestChild{
+
+}
