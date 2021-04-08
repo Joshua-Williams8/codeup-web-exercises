@@ -341,3 +341,60 @@ function getHighestNumberStrToArray(x,y,z) {
   }
 }
 
+function bitwiseAND(n1, n2) {
+  //First we want to convert both of the input numbers to binary, using toString(2)
+  var n1string = n1.toString(2);
+  var n2string = n2.toString(2);
+  //Next we want to declare both of the Array Strings and our result Array
+  var n1stringArr = n1string.split("");
+  //console.log(n1stringArr)
+  var n2stringArr = n2string.split("");
+  //console.log(n2stringArr)
+  var resultArr = []
+  //We are using the while loop to add 0s until the array is 8 items long(because of Ips) but we can go longer if needed. I just kept it down to 8 since we aren't using anything larger than 255.
+  while(n1stringArr.length < 8){
+    //We are using the string version of 0 to avoid any unexpected parsing issues for the future.
+    n1stringArr.unshift("0")
+  }
+  //console.log(parseInt(n1stringArr.join(""), 2))
+  //Below using regExp (regular Expression) I need help understanding this please.
+ // console.log(parseInt(n1stringArr.join("").replace(/[^01]/gi, ''), 2))
+  //console.log(n1stringArr)
+  while(n2stringArr.length < 8){
+    n2stringArr.unshift("0")
+  }
+  //console.log(n2stringArr)
+  //Below we are seting up for each loops
+  n1stringArr.forEach(function(bitn1,indexn1 ){
+    n2stringArr.forEach(function(bitn2,indexn2){
+      //For our if else statements we need the bit, and the index to match, for us to push to the result, but if that's not the case we still need to push a zero
+      //Since this is an AND function we want matching bits only!
+     if ((bitn1 === bitn2) && (indexn1 === indexn2)){
+       //console.log(resultArr, "Before if", indexn1,indexn2)
+       //It doesn't matter if we push 1 or 0 because we will get a the value that's the same for the AND function
+       resultArr.push(bitn1)
+       //console.log(resultArr, "After if", indexn1,indexn2)
+       //For this if statement were saying only push a 0 if the indexs are at the same point in their respective arrays, (This is also why we set the match bits to 8) so we don't have any length problems.
+     } else if (indexn1 === indexn2 && bitn1 !== bitn2) {
+       console.log(resultArr, "before else", indexn1,indexn2)
+       //Pushing a zero if the bits don't match because if they don't then the bit is turned off, We only want to send forward ON bits or 1s.
+       resultArr.push("0")
+       //console.log(resultArr, "After else", indexn1,indexn2)
+     }
+    });
+  });
+  //After finishing the loops we want to reconvert our array into a string, and then into a number. (not sure what the use of this is yet but it's good practice)
+  //console.log(resultArr)
+var result = parseInt(resultArr.join(""),2)
+  return result
+}
+//Show these tomorrow and ASK ABOUT THE REGULAR EXPRESSION STUFF PLEASE.
+function bitwiseOR(n1, n2) {
+  var nstring1 = n1.toString(2);
+  var nstring2 = n2.toString(2);
+}
+
+function bitwiseXOR(n1, n2) {
+  var nstring1 = n1.toString(2);
+  var nstring2 = n2.toString(2);
+}

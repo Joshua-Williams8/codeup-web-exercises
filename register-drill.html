@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+</head>
+<body>
+<!-- https://request-inspector.glitch.me/ -->
+<h1>Register With Us!</h1>
+<hr>
+<form method="POST" action="https://request-inspector.glitch.me/">
+  <div>
+    <h2>Email and Password</h2>
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="Enter Username">
+    <ul>
+      <li>Username cannot contain any inappropriate language.</li>
+    </ul>
+    <br>
+    <label for="email">Email</label>
+      <input id="email" name="email" type="text" placeholder="Enter Email">
+    <br>
+    <br>
+    <br>
+    <!-- Using password- because I kept getting alerts about my password not being sent in a secure way, (even though here it doesn't matter).-->
+    <label for="password-">Password</label>
+    <input id="password-" name="password-" type="password" placeholder="Enter Password">
+    <br>
+    <br>
+    <label for="passwordc">Confirm Password</label>
+    <input id="passwordc" name="passwordc" type="password" placeholder="Confirm Password">
+    <ul>
+      <li>Password must include at least one type of each character. (UPPER CASE, lower case,a symbol, and a number.</li>
+      <li>Password cannot be the same as the username.</li>
+      <li>Password must be at least 6 characters.</li>
+      <li>Password cannot contain any spaces.</li>
+    </ul>
+
+  </div>
+  <div>
+    <label for="news"><input type="checkbox" id="news" name="news" value="send-news" checked>Signup for our newsletter?</label>
+  </div>
+  <hr>
+  <div>
+    <button type="submit">Submit Registration Form</button>
+  </div>
+  </form>
+</body>
+</html>
