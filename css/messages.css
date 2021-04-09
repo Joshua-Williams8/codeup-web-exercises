@@ -1,0 +1,45 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: .5em;
+  font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message-info{
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: grey;
+  padding: .5em;
+  border-radius: 5px;
+  color: rgb(60,53,151);
+  background-color: rgb(206,222,255);
+}
+.message-success{
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: lightgrey;
+  padding: .5em;
+  border-radius: 5px;
+  color: rgb(47,124,73);
+  background-color: rgb(209,243,218);
+}
+.message-warning{
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: lightgrey;
+  padding: .5em;
+  border-radius: 5px;
+  color: rgb(158,140,52);
+  background-color: rgb(252,251,201);
+}
+.message-error{
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: lightgrey;
+  padding: .5em;
+  border-radius: 5px;
+  color: rgb(139,46,65);
+  background-color: rgb(249,211,215);
+}
+/* 6pm tuesdays and thursdays https://us02web.zoom.us/j/83760881630?pwd=U0ZNM3VXU2lGYmdBSml2eVBnZWw4QT09 */

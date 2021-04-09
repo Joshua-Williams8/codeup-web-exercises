@@ -121,10 +121,12 @@ TestParent>TestChild{
   margin-left: auto;
   margin-right: auto;
   background-color: red;
-  width: 10em;
+  width: 20em;
   /*height:5em;*/
   padding: 2em;
   border: 3em dotted #124145;
   /* border-top: */
-
+  /* box-sizing default is content-box */
+  /* sets width inclusive of the the border, padding and content to be included when setting the width, usually used when you Need and element to fit at a specific size*/
+  /*box-sizing: border-box;*/
 }
