@@ -4,6 +4,7 @@
 /* below is an example to get it to work from font-family */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
 
 body {
   font-family: "Roboto", sans-serif;
@@ -11,6 +12,11 @@ body {
   background-color: #a8ccdd;
   background-size: 50%;
   background-repeat: repeat, round;
+}
+.center{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .bottom-border{
   border-bottom: black 2px solid
@@ -23,9 +29,12 @@ h1, h2{
 h1 {
   text-align: center;
 }
-ul {
+ul, ol{
   list-style: square;
   list-style: linear-gradient(#f0f8ff,darkblue);
+  list-style-position:inside;
+  margin-left: auto;
+  margin-right: auto;
 }
 table.imageTable {
   background-color: black;
@@ -58,7 +67,7 @@ a:active {
   color:black;
 }
 a:visited {
-  color:#800903;
+  color: #800903;
 }
 a:hover{
   color:purple;
@@ -66,6 +75,17 @@ a:hover{
 .redText{
   color: firebrick;
   font-size: 1.5em;
+}
+#topbutton {
+  right: 10px;
+  bottom: 10px;
+  position: fixed;
+}
+.infoList{
+  width: 30%;
+}
+strong{
+  font-weight: 500 ;
 }
 
 * {
@@ -94,5 +114,17 @@ a:visited {
 }
 /* Below is for nesting styles depending on where stuff is at */
 TestParent>TestChild{
+
+}
+/* Content's area is defined using HEIGHT AND WIDTH, padding is with padding, border is with border and margin is with margin.*/
+#TestBox{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  width: 10em;
+  /*height:5em;*/
+  padding: 2em;
+  border: 3em dotted #124145;
+  /* border-top: */
 
 }
