@@ -6,40 +6,32 @@ body, html {
   font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  border: #dedede solid 1px;
+  padding: .5em;
+  border-radius: .3em;
+}
+
 .message-info{
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border: grey;
-  padding: .5em;
-  border-radius: 5px;
-  color: rgb(60,53,151);
-  background-color: rgb(206,222,255);
+  color: #3C3597;
+  background-color: #CEDEFF;
 }
+
 .message-success{
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border: lightgrey;
-  padding: .5em;
-  border-radius: 5px;
-  color: rgb(47,124,73);
-  background-color: rgb(209,243,218);
+  color: #2F7C49;
+  background-color: #D1F3DA;
 }
+
 .message-warning{
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border: lightgrey;
-  padding: .5em;
-  border-radius: 5px;
-  color: rgb(158,140,52);
-  background-color: rgb(252,251,201);
+  color: #9E8C34;
+  background-color: #FCFBC9;
 }
+
 .message-error{
-  margin-top: .5em;
-  margin-bottom: .5em;
-  border: lightgrey;
-  padding: .5em;
-  border-radius: 5px;
-  color: rgb(139,46,65);
-  background-color: rgb(249,211,215);
+  color: #8B2E41;
+  background-color: #F9D3D7;
 }
+
 /* 6pm tuesdays and thursdays https://us02web.zoom.us/j/83760881630?pwd=U0ZNM3VXU2lGYmdBSml2eVBnZWw4QT09 */
