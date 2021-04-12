@@ -59,12 +59,13 @@ fieldset {
 
 .btn {
    /* There must be a separation of 8px between the text and the border of this element */
-  padding: 8px;
+  padding: 8px 0;
+  /* For above you want to make sure the sides don't gain any padding.*/
     /* The text color of this element should be white and bold */
   color: white;
   font-weight: bold;
     /* The border of this element should be 1px, and its color should be light grey */
-  border: 1px lightgrey;
+  border: 1px lightgrey solid;
   background-color: #0fb784;
 }
 

@@ -1,0 +1,29 @@
+#container {
+  margin: 50px auto;
+  width: 500px;
+  border: 1px solid #000;
+  padding: 10px;
+
+}
+#box1 {
+  background-color: #77AF00; /* greenish */
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+
+}
+#box2 {
+  background-color: #1969B2; /* blueish */
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  float: bottom;
+}
+/* Attribute selector...
+img[src*="logo" would select any image with a src attribute that has the word "logo" in it
+*/
+/* How to have css lay something out as a table without a table.
+ You can use display:table-cell
+ and display:table-row, with things you tagged as rows or cells
+ Use border spacing to get your margins correctly, 
+ */
