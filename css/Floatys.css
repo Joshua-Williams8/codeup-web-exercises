@@ -25,5 +25,5 @@ img[src*="logo" would select any image with a src attribute that has the word "l
 /* How to have css lay something out as a table without a table.
  You can use display:table-cell
  and display:table-row, with things you tagged as rows or cells
- Use border spacing to get your margins correctly, 
+ Use border spacing to get your margins correctly,
  */
