@@ -127,6 +127,8 @@ a {
   border-bottom: 1px var(--separator-color);
   padding: .5em;
   overflow: auto;
+  clear: both;
+  /* You can use display: flow-root to do the overflow auto. */
 }
 
 .media-image {
