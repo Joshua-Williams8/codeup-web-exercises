@@ -116,9 +116,11 @@ a {
 }
 
 .media-body {
+  float:left;
   margin-top: 2em;
   width: calc(100% - 50px) ;
 }
+
 .media {
   width: 100%;
   background-color: var(--light-bg);
@@ -126,16 +128,20 @@ a {
   padding: .5em;
   overflow: auto;
 }
+
 .media-image {
   max-width: 50px;
   float: left;
 }
+
 .profile-items {
   list-style-type: none;
 }
+
 .profile-entry {
   margin: .5em;
 }
+
 .container {
   margin-top: 2em;
 }
