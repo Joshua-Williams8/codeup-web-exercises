@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Basics Examples</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Helvetica,serif;
+      font-weight: bold;
+    }
+    .flex-container {
+      /* If I raised the height then the items would flex by default and get taller. or longer depending if I'm set to column or row mode.*/
+      /*height: 250px;*/
+      /*width: 100px;*/
+      margin-top: 3em;
+      width: 100%;
+      border: 3px solid goldenrod;
+      display: flex;
+      /* below depending on if you have row or column it will display it in that */
+      /*flex-direction: row;*/
+      /* aligns the content to the right hand side and displays it in reverse. If I do column-reverse It will display from bottom up.*/
+      /*flex-direction: row-reverse;*/
+      /*flex-direction: column-reverse;*/
+      /*justify-content: flex-start; is the default and it just starts normal.*/
+      /*justify-content: flex-end; Makes the content start at the end but not like reverse when it would show 3 2 1, it still shows 1 2 3 but aligned to the opposite side.*/
+      /*justify-content: center; Makes content start in the middle.*/
+      /*justify-content: space-between; Automatically puts proper spacing between all the content with content going from edge to edge.*/
+      /*justify-content: space-around; It's going to do the same kind of thing as space-between except theres a bit of space on the edges, usually half of the size of the space btween items on the edges? */
+      /*justify-content: space-evenly; Same thing as above except the spacing from the edges is the same as the elements are spaced from each other.*/
+      /* below will not allow the items to do the default behavior which is stretch, and put them in a way which it only takes up as much space as needed max for the boxes? */
+      /*align-items: flex-start;*/
+      /*height: 10em;*/
+      /* Below does the same as top, except now it's on the bottom left of the box instead of top left.  */
+      /*align-items: flex-end;*/
+      /*height: 5em;*/
+      /* below is the default which is to stretch the content boxes.*/
+      /*align-items: stretch;*/
+      /*height: 10em;*/
+      /* Centers its items from top down? use with justify-content: center to put stuff directly in the middle?. */
+      /*align-items: center;*/
+      /*height: 6em;*/
+      /* check out the stuff above ot see how it reacts with a column */
+      /*flex-direction: column;*/
+      /*align-items: flex-start;*/
+
+      /* Part 2 stuff below */
+      /* Using flex-wrap  wrap will automatically make a new column as needed if there are too many items. If there nowrap,it will just make the box longer? so use that with overflow auto? */
+      /*flex-wrap: nowrap;*/
+      /*overflow: auto;*/
+
+      /*This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.*/
+    }
+
+    .flex-item {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item">Item 1</div>
+  <div class="flex-item">Item 2</div>
+  <div class="flex-item">Item 3</div>
+  <div class="flex-item">Item 4</div>
+  <div class="flex-item">Item 5</div>
+  <div class="flex-item">Item 6</div>
+  <div class="flex-item">Item 7</div>
+  <div class="flex-item">Item 8</div>
+  <div class="flex-item">Item 9</div>
+  <div class="flex-item">Item 10</div>
+  <div class="flex-item">Item 11</div>
+  <div class="flex-item">Item 12</div>
+  <div class="flex-item">Item 13</div>
+  <div class="flex-item">Item 14</div>
+  <div class="flex-item">Item 15</div>
+  <div class="flex-item">Item 16</div>
+  <div class="flex-item">Item 17</div>
+  <div class="flex-item">Item 18</div>
+  <div class="flex-item">Item 19</div>
+  <div class="flex-item">Item 20</div>
+  <div class="flex-item">Item 21</div>
+  <div class="flex-item">Item 22</div>
+  <div class="flex-item">Item 23</div>
+  <div class="flex-item">Item 24</div>
+</div>
+
+</body>
+</html>

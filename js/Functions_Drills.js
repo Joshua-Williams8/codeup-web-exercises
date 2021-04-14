@@ -515,3 +515,7 @@ function bitwiseXOR(n1, n2) {
   var result = parseInt(resultArr.join(""),2)
   return result
 }
+// regular expression stuff below
+// function hasLowerCase(str) {
+//   return (/[a-z]/.test(str));
+// }

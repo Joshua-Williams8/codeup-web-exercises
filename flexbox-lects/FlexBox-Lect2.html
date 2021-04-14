@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Basics Examples</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Helvetica,serif;
+      font-weight: bold;
+    }
+    .flex-container {
+      display: flex;
+      align-items: baseline;
+      border: 5px solid goldenrod;
+      height: 100vh;
+    }
+    .flex-item {
+      background: #BFD45D;
+      border: 2px solid #F9EFD6;
+      padding: 1em;
+    }
+    .box1 {
+      font-size: 15px;
+    }
+    .box2 {
+      font-size: 30px;
+    }
+    .box3 {
+      font-size: 45px;
+    }
+    .box4 {
+      font-size: 60px;
+    }
+    .box5 {
+      font-size: 75px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item box1">Item 1</div>
+  <div class="flex-item box2">Item 2</div>
+  <div class="flex-item box3">Item 3</div>
+  <div class="flex-item box4">Item 4</div>
+  <div class="flex-item box5">Item 5</div>
+</div>
+
+</body>
+</html>
