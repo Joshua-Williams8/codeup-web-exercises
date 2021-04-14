@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-nav {
+  margin-bottom: auto;
+  display: flex;
+  align-items: flex-start;
+  background-color: grey;
+
+}
+
+.logo {
+  height: 1em;
+}
+
+.middle {
+  margin: 0 auto;
+}
+.right {
+  /*align-self: flex-end;*/
+}
+nav a {
+  color: black;
+  background-color: grey;
+  text-decoration: unset;
+  font-weight: bold;
+  padding: .5em 1em;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}
+
