@@ -1,21 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
 .top-nav {
-  margin-bottom: auto;
+  width: 100%;
+  margin: 0 0 auto 0;
+  /*margin-bottom: auto;*/
   display: flex;
   align-items: flex-start;
   background-color: grey;
-
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .logo {
-  height: 1em;
+  height: calc(1em - 2px);
 }
 
 .middle {
   margin: 0 auto;
+  font-size: 4vh;
+  padding: 0;
 }
 .right {
   /*align-self: flex-end;*/
@@ -26,6 +41,8 @@ nav a {
   text-decoration: unset;
   font-weight: bold;
   padding: .5em 1em;
+  margin: 0;
+
 }
 
 a:hover {
@@ -33,3 +50,6 @@ a:hover {
   color: white;
 }
 
+p {
+  margin-top: 200em;
+}
