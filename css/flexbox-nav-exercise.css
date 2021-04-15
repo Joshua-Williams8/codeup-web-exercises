@@ -1,21 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Required */
+  padding: 0;
+  margin: 0;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto";
+  font-family: "Montserrat", serif;
 }
-
+ul {
+  /*display: inline-block;*/
+  list-style-type: none;
+  margin: 0;
+}
 .top-nav {
   width: 100%;
+  /* No explicit height allowed*/ /* Required */
   margin: 0 0 auto 0;
   /*margin-bottom: auto;*/
   display: flex;
-  align-items: flex-start;
+  flex-basis: border-box;
+  align-items: center;
   background-color: grey;
   position: fixed;
   top: 0;
@@ -29,25 +37,36 @@ body {
 
 .middle {
   margin: 0 auto;
-  font-size: 4vh;
-  padding: 0;
+  font-size: 3em; /* Required */
+  padding: .2em 0; /* Required */
+  position: absolute; /* Required */
+  top: -35%;
+  left: 0;
+  right: 0;
+  width: 100px;
+}
+.test {
+  margin: 0 auto;
 }
 .right {
-  /*align-self: flex-end;*/
+  align-content: flex-end;
 }
-nav a {
+nav li {
   color: black;
   background-color: grey;
   text-decoration: unset;
   font-weight: bold;
-  padding: .5em 1em;
+  padding: 0;
   margin: 0;
-
 }
-
-a:hover {
-  background-color: black;
-  color: white;
+a{
+  display: inline-block; /* Required */
+  text-decoration: unset;
+  color: black;
+  padding: 1em 1em;
+}
+li a:hover {
+  color: blue; /* Required */
 }
 
 p {
