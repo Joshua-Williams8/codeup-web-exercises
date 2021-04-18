@@ -1,0 +1,20 @@
+.inline-image {
+  height: 20px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #494e4e;
+  border-color: #010202; /*set the color you want here*/
+
+}
+
+.jumbotron {
+  background-image: url("../img/pizza-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+h1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
