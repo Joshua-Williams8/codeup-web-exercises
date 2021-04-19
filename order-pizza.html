@@ -12,7 +12,7 @@
 </head>
 
 <body class="mb-5">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-top px-5">
   <a class="navbar-brand" href="#">Pizza World</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link nav-button-hover" href="#">Order online<span class="sr-only">(current)</span></a>
+        <a class="nav-link nav-button-hover btn btn-light" href="#">Order online<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Menu</a>
@@ -57,17 +57,20 @@
     </div>
   </div>
 </nav>
-<div class="container-fluid px-0">
-  <div class="jumbotron jumbotron-fluid d-none d-sm-block">
-    <div class="container-fluid px-0">
-      <h1 class="display-4">Welcome to Pizza World!</h1>
-      <!--      <p class="lead">This is the smaller bottom text</p>-->
+<div class="mx-5"> <!-- Made this div just to make the margin space correctly -->
+  <div class="container-fluid px-0">
+    <div class="jumbotron jumbotron-fluid d-none d-sm-block">
+      <div class="container-fluid px-0">
+        <h1 class="display-4">Welcome to Pizza World!</h1>
+        <!--      <p class="lead">This is the smaller bottom text</p>-->
+      </div>
     </div>
   </div>
 </div>
 
-<div> <!-- Start of of tabs -->
+<div class="mx-5"> <!-- Start of of tabs -->
   <form method="POST" action="https://request-inspector.glitch.me/"> <!-- Form stuff -->
+    <h2>Build Your Own Pizza!</h2>
     <nav> <!-- Tab Titles below -->
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -222,10 +225,10 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <div class="input-group mb-3">
-<!--                      <div class="input-group-prepend">-->
-<!--                        <label class="input-group-text" for="inputGroupSelect01">Options</label>-->
-<!--                      </div>-->
-                      <select class="custom-select" id="cheese">
+                      <!--                      <div class="input-group-prepend">-->
+                      <!--                        <label class="input-group-text" for="inputGroupSelect01">Options</label>-->
+                      <!--                      </div>-->
+                      <select class="custom-select" id="cheese" name="cheese">
                         <option value="cheese-regular" selected>Regular</option>
                         <option value="cheese-light">Light</option>
                         <option value="cheese-light">Double</option>
@@ -250,7 +253,7 @@
                       <!--                      <div class="input-group-prepend">-->
                       <!--                        <label class="input-group-text" for="inputGroupSelect01">Options</label>-->
                       <!--                      </div>-->
-                      <select class="custom-select" id="sauce-type">
+                      <select class="custom-select" id="sauce-type" name="sauce-type">
                         <option value="sauce-tomato" selected>Tomato Sauce</option>
                         <option value="sauce-alfredo">Alfredo Sauce</option>
                         <option value="sauce-barbecue">Barbecue Sauce</option>
@@ -262,7 +265,7 @@
                       <!--                      <div class="input-group-prepend">-->
                       <!--                        <label class="input-group-text" for="inputGroupSelect01">Options</label>-->
                       <!--                      </div>-->
-                      <select class="custom-select" id="sauce-much">
+                      <select class="custom-select" id="sauce-much" name="sauce-much">
                         <option value="sauce-regular" selected>Regular</option>
                         <option value="sauce-extra">Extra</option>
                         <option value="sauce-light">Light</option>
@@ -325,7 +328,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-beef" id="meat-beef">
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-beef" id="meat-beef">
                     <label class="form-check-label" for="meat-beef">
                       Beef
                     </label>
@@ -333,7 +336,7 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-ham" id="meat-ham">
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-ham" id="meat-ham">
                     <label class="form-check-label" for="meat-ham">
                       Ham
                     </label>
@@ -341,7 +344,7 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-bacon" id="meat-bacon">
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-bacon" id="meat-bacon">
                     <label class="form-check-label" for="meat-bacon">
                       Bacon
                     </label>
@@ -349,15 +352,16 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-sausage" id="meat-sausage">
-                    <label class="form-check-label" for="meat-sausage">
-                      Sausage
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-chicken" id="meat-chicken">
+                    <label class="form-check-label" for="meat-chicken">
+                      Chicken
                     </label>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-philly-steak" id="meat-philly-steak">
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-philly-steak"
+                           id="meat-philly-steak">
                     <label class="form-check-label" for="meat-philly-steak">
                       Philly Steak
                     </label>
@@ -365,7 +369,8 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="meat-anchovies" id="meat-anchovies">
+                    <input class="form-check-input" type="checkbox" name="meat" value="meat-anchovies"
+                           id="meat-anchovies">
                     <label class="form-check-label" for="meat-anchovies">
                       Anchovies
                     </label>
@@ -383,7 +388,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="non-meat-green-peppers"
+                    <input class="form-check-input" type="checkbox" name="non-meat" value="non-meat-green-peppers"
                            id="non-meat-green-peppers">
                     <label class="form-check-label" for="non-meat-green-peppers">
                       Green Peppers
@@ -392,7 +397,8 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="non-meat-mushrooms" id="non-meat-mushrooms">
+                    <input class="form-check-input" type="checkbox" name="non-meat" value="non-meat-mushrooms"
+                           id="non-meat-mushrooms">
                     <label class="form-check-label" for="non-meat-mushrooms">
                       Mushrooms
                     </label>
@@ -400,7 +406,7 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="non-meat-jalepeno-peppers"
+                    <input class="form-check-input" type="checkbox" name="non-meat" value="non-meat-jalepeno-peppers"
                            id="non-meat-jalepeno-peppers">
                     <label class="form-check-label" for="non-meat-jalepeno-peppers">
                       Jalepeño Peppers
@@ -409,7 +415,8 @@
                 </li>
                 <li class="list-group-item">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="non-meat-onions" id="non-meat-onions">
+                    <input class="form-check-input" type="checkbox" name="non-meat" value="non-meat-onions"
+                           id="non-meat-onions">
                     <label class="form-check-label" for="non-meat-onions">
                       Onions
                     </label>
@@ -445,5 +452,19 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/17e1f635cb.js" crossorigin="anonymous"></script>
+<script>
+  $('#nav-tab').click(function(e){
+    e.preventDefault();
+    $('#nav-tab a[href="#cheese-and-sauce"]').tab('show');
+  });
+  $('#nav-size-and-crust-tab').click(function(e){
+    e.preventDefault();
+    $('#nav-tab a[href="#size-and-crust"]').tab('show');
+  });
+  $('#nav-toppings').click(function(e){
+    e.preventDefault();
+    $('#nav-tab a[href="#toppings"]').tab('show');
+  });
+</script>
 </body>
 </html>
