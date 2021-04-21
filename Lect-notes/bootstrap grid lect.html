@@ -4,25 +4,40 @@
   <meta charset="UTF-8">
   <title>grid lect</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="FlexBox-lec-Exe.css">
 </head>
-<body >
-<div class="container border border-secondary bg-secondary"> <!-- CSs has a 12 column grid system. -->
-  <div class="row">
-    <div class="col-12 col-lg-2 border border-info bg-info  offset-lg-8"> <!-- So if we use 10 here and 2 below, that will take up all the columns and make the rest go to another row. -->
-      One of three columns
-<!--      Using offset pushes something the amount of columns over,  so you might want to using it to space stuff out or other reasons-->
+<body class="mx-5">
+<div class="container px-0 mx-auto">
+  <div class="row mx-auto" >
+    <div class="col-8 mx-auto text-center"> <!-- Changes here-->
+      <h1 class="font-weight-bold">VISUAL DESIGN & WEB DEVELOPMENT</h1>
+      <h3 class="font-weight-bold">FROM PARK CITY, UTAH</h3>
     </div>
-    <div class="d-none d-md-block col-12 col-lg-2 border border-primary bg-primary">
-      One of three columns
-<!--      The d-none means from small up to the d-md-block or d-lg-block means it will show once we hit medium or larger screens-->
-    </div>
-    <div class="col-12 col-lg-3 border border-danger bg-danger">
-      One of three columns
-<!--      The col-lg or md-# means That once we get ths screen to a medium or large size, then change the columns to present this way.-->
-    </div>
-  </div>
-</div>
+    <div class="row mx-auto text-white justify-content-center justify-content-sm-end" >
+      <div class="circle-stuff text-center" id="design">
+        <div class="my-auto" id="text-center1">
+          Design
+        </div>
+      </div>
+      <div class="circle-stuff" id="develop">
+        <div class="my-auto" id="text-center1">
+          Develop
+        </div>
+      </div>
+      <div class="d-block d-sm-none">
+      </div>
+      <div class="circle-stuff" id="support">
+        <div class="my-auto" id="text-center1">
+          Support
+        </div>
+      </div>
 
+      <div class="circle-stuff" id="host">
+        <div class="my-auto" id="text-center1">
+          Host
+        </div>
+      </div>
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

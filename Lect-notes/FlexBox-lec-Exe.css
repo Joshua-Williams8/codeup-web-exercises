@@ -1,9 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&display=swap');
 * {
-  box-sizing: border-box;
+  font-family: "Abelgi";
 }
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #89cdfa;
+  background-color: #F0F0F0;
+}
+h1 {
+  font-family: "Anton";
+}
+h3 {
+  font-family: "Anton";
+}
+.circle-stuff {
+  box-sizing: border-box;
+  height: 105px;
+  width: 105px;
+  border: white solid 5px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 5px 10px;
 
+}
+.line-break {
+  flex-basis: 100%;
+
+}
+
+/*#four-con {*/
+/*  justify-content: center;*/
+/*  align-content: space-between;*/
+/*}*/
+#design {
+  background-color: #E6563B;
+
+}
+
+#develop {
+  background-color: #DE9F3D;
+}
+
+#support {
+  background-color: #7CB06C;
+}
+
+#host {
+  background-color: #00ABA9;
+}
+#text-center1 {
+  padding-top: 33px;
 }
