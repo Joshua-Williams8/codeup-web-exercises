@@ -22,18 +22,57 @@
 //interval is TIME in MILLISECONDS so 1000 = 1 second.
 //clearinterval?
 
-var count = 0
-var thisWillStop;
-function hey(){
-  if (count < 10) {
-    console.log("hey " + count);
-    count = count + 1;
-  } else {
-    clearInterval(thisWillStop);
-  }
-}
-var thisWillStop;
-thisWillStop = setInterval(hey, 1000)
+// var count = 0
+// var thisWillStop;
+// function hey(){
+//   if (count < 10) {
+//     console.log("hey " + count);
+//     count = count + 1;
+//   } else {
+//     clearInterval(thisWillStop);
+//   }
+// }
+// var thisWillStop;
+// thisWillStop = setInterval(hey, 1000)
 //But why does above set it?
 //The function above stops because we call clear interval?
+
+
+ // variablewithHTML.innerHTML;
+
+var accessTheDom = document.getElementById("boi");
+var showMe = accessTheDom.innerHTML;
+alert(showMe);
+var gang = document.getElementById("gang")
+
+//Look what happens if the script is in the header vs the bottom. or if you take off certain bits
+
+accessTheDom.innerText = accessTheDom.innerHTML + " hi"
+accessTheDom.setAttribute("class", "boiclass")
+
+//Oof it worked.
+// gang.setAttribute("style", "color:purple") has be commented out for below stuff to work.
+
+
+//Just testin setattribute thing above.
+var gangs = document.getElementsByClassName("gang");
+// gangs[0].style.color = "green";
+// gangs[1].style.color = "hotpink";
+
+for(var i = 0; i < gangs.length; i++) {
+  gangs[i].style.color = "grey";
+}
+
+//For later keep in mind were using input type="button" (it also has a value="submit" not submit because were only doing stuff in the page with our JS, not submiting a form to another page.
+//You can use a .onclick to call a function ?
+
+//target.addEventListerner("type", listener);
+
+document.addEventListener("click", function(event) {
+
+});
+
+docuement.querySelector("")document.addEventListener("click", function(event) {
+
+});
 
