@@ -25,19 +25,41 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="button-1">Change H1</button>
+<button id="button-2">Change subheader to blue</button>
+<button id="button-3">Change list colors</button>
+<button id="button-4">Change paragraph above</button>
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById("main-header");
+        // var bOne = document.getElementById("button-1");
+        // var bTwo = document.getElementById("button-2");
+        // var bThree = document.getElementById("button-3");
+        // var bFour = document.getElementById("button-4");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-          mainHeader.innerHTML = "JavaScript is Cool"
+        //   mainHeader.innerHTML = "JavaScript is Cool"
+        //button version below
+        var bOne = document.getElementById("button-1");
+        bOne.addEventListener("click", function(){
+          mainHeader.innerHTML = "Java Script is Cool";
+        });
+
+
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-          subHeader.setAttribute("style", "color:blue;")
+        //   subHeader.setAttribute("style", "color:blue;");
+        //button version below
+        var bTwo = document.getElementById("button-2");
+        bTwo.addEventListener("click", function (){
+          subHeader.setAttribute("style", "color:blue;");
+        })
+
         // TODO: Uncomment the next line and get all list items
         var listItems = document.querySelectorAll("li");
 
@@ -49,24 +71,51 @@
         return parseFloat(number) % 2 === 0;
       }
 
-      listItems.forEach(function (element,index){
-        // if (index === 0 ) {
-        //Above is a way just to target the first list item
-        if (element === document.querySelector("[data-dbid='1']") ) {
-          //Above is a more EXPLICIT way of doing what is asked but only targeting dbid 1 by using the query selector( YOU HAVE TO USE 2 DIFFERENT TYPES OF QUOTES) so I'm checking if the element is equal to, something with a data-dbid attribute with a value of "1", inside of the html.
-          //Look up getAttribute selector?
-          console.log(element);
-          element.setAttribute("style", "color:blue");
-        } else if (isEven(index)) {
-          element.setAttribute("style", "color:grey");
-        }
-    });
+    //   listItems.forEach(function (element,index){
+    //     // if (index === 0 ) {
+    //     //Above is a way just to target the first list item
+    //     if (element === document.querySelector("[data-dbid='1']") ) {
+    //       //Above is a more EXPLICIT way of doing what is asked but only targeting dbid 1 by using the query selector( YOU HAVE TO USE 2 DIFFERENT TYPES OF QUOTES) so I'm checking if the element is equal to, something with a data-dbid attribute with a value of "1", inside of the html.
+    //       //Look up getAttribute selector?
+    //       console.log(element);
+    //       element.setAttribute("style", "color:blue");
+    //     } else if (isEven(index)) {
+    //       element.setAttribute("style", "color:grey");
+    //     }
+    // });
+
+      //Button version below
+      var bThree = document.getElementById("button-3");
+      bThree.addEventListener("click", function(){
+        listItems.forEach(function (element,index){
+          // if (index === 0 ) {
+          //Above is a way just to target the first list item
+          if (element === document.querySelector("[data-dbid='1']") ) {
+            //Above is a more EXPLICIT way of doing what is asked but only targeting dbid 1 by using the query selector( YOU HAVE TO USE 2 DIFFERENT TYPES OF QUOTES) so I'm checking if the element is equal to, something with a data-dbid attribute with a value of "1", inside of the html.
+            //Look up getAttribute selector?
+            console.log(element);
+            element.setAttribute("style", "color:blue");
+          } else if (isEven(index)) {
+            element.setAttribute("style", "color:grey");
+          }
+        });
+
+      })
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        console.log(subParagraphs)
+        console.log(subParagraphs);
       // The reason it outputs a list ie because multiple elements can have the same class, but only one element is suppose to have an ID.
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-      subParagraphs[0].innerHTML = "Mission Accomplished"
+      // subParagraphs[0].innerHTML = "Mission Accomplished";
+      //Button version below
+
+      var bFour = document.getElementById("button-4");
+      bFour.addEventListener("click", function (){
+        subParagraphs[0].innerHTML = "Mission Accomplished";
+
+      });
+
     })();
 </script>
 </body>

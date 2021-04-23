@@ -72,7 +72,26 @@ document.addEventListener("click", function(event) {
 
 });
 
-docuement.querySelector("")document.addEventListener("click", function(event) {
-
+document.querySelector("#guy").addEventListener("click", function() {
+document.querySelector("#guy").setAttribute("style", "color:blue;")
 });
+
+var guy = document.querySelector("#guy");
+
+var guyListener = function() {
+  this.style.color ="red";
+  this.addEventListener("mouseout", function(){
+    this.style.color ="orange";
+  });
+}
+guy.addEventListener("mouseover", guyListener);
+//`` thing the tilda is on, back tics used for targeting `${some.what}
+
+//key event
+
+document.addEventListener("keyup", function (event) {
+  console.log(event)
+})
+
+
 
