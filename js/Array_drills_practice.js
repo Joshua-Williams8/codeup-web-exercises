@@ -161,7 +161,7 @@ function reverseArray(array){
 }
 
 function getRandomQuote(){
-  var quotesArray = ["bada bing","You got bamboozled","Hi there","What ever dude"]
+  var quotesArray = ["bada bing","You got bamboozled","Hi there","What ever"]
   return quotesArray[Math.floor(Math.random() * quotesArray.length - 1) + 1];
 }
 

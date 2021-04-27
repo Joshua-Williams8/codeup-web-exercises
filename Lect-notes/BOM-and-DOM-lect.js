@@ -91,7 +91,7 @@ guy.addEventListener("mouseover", guyListener);
 
 document.addEventListener("keyup", function (event) {
   console.log(event)
-})
+});
 
 
 
