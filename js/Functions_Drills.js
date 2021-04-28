@@ -519,3 +519,67 @@ function bitwiseXOR(n1, n2) {
 // function hasLowerCase(str) {
 //   return (/[a-z]/.test(str));
 // }
+
+function isNegative(x){
+  return x < 0
+}
+function isPositive(x){
+  return x > 0
+}
+
+function removeFromArray(array,remove){
+  var resultArray = []
+  array.forEach(function (element,index){
+    if (element !== remove){
+      resultArray.push(element);
+    }
+  });
+  return resultArray;
+}
+
+function average(array){
+  var sum = 0;
+  array.forEach(function (element,index){
+    sum = sum + element;
+  });
+  sum = sum / array.length;
+  return sum
+}
+
+function countEvens(array){
+  //Check to see if a number is odd.
+  function isEven(number) {
+    return parseFloat(number) % 2 === 0;
+  }
+  var result = 0
+  array.forEach(function (element,index){
+    if(isEven(element)){
+      result += 1;
+    }
+  });
+  return result
+}
+
+
+function countVowels(string){
+  var count = 0;
+  function isVowel(letter){
+    if (typeof letter !== "string") {
+      return false
+    } else if (letter.length === 1) {
+      letter = letter.toLowerCase();
+      return (letter === "a") || (letter === "e") || (letter === "i") || (letter === "o") || (letter === "u");
+    } else {
+      return false
+    }
+  }
+  var stringArray = string.split("");
+  stringArray.forEach(function (element,index){
+    if (isVowel(element)){
+      count++
+    }
+  });
+  return count;
+}
+
+
