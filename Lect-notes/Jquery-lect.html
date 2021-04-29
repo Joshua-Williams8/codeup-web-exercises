@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery</title>
+<style>
+  p {
+    color: darkgoldenrod ;
+  }
+</style>
+</head>
+<body>
+<div id="guy">bada</div>
+<div class="gang">bing</div>
+<div class="gang">bam</div>
+<div id="boi">boozle</div>
+
+<h2>Stuff</h2>
+<div>
+<p id ="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
+</div>
+<input type="button" value="submit" id="testform">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$("h2").click(function(){
+  $(this).next().children("p").slideToggle(500);
+});
+</script>
+</body>
+</html>

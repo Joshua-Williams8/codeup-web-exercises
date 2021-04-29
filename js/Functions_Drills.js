@@ -30,8 +30,16 @@ function isEven(number) {
   if (parseFloat(number) % 2 === 0) {
     return number + " is even."
   }
-
 }
+
+function isNegative(x){
+  return x < 0
+}
+
+function isPositive(x){
+  return x > 0
+}
+
 //returns input as provided
 function identity(input){
   return input;
@@ -520,12 +528,7 @@ function bitwiseXOR(n1, n2) {
 //   return (/[a-z]/.test(str));
 // }
 
-function isNegative(x){
-  return x < 0
-}
-function isPositive(x){
-  return x > 0
-}
+
 
 function removeFromArray(array,remove){
   var resultArray = []
