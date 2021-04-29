@@ -20,11 +20,20 @@
 <p id ="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
 </div>
 <input type="button" value="submit" id="testform">
+<!--<script src="../js/jquery-3.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
 $("h2").click(function(){
   $(this).next().children("p").slideToggle(500);
 });
+  jQuery("#thetest").html("I am the chosen one");
+$(".gang").click(function(){
+  $(".gang").css("color", "green");
+});
+
+
+}
+
 </script>
 </body>
 </html>
