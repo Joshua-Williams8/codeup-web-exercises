@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <title>Jquery</title>
 <style>
-  p {
-    color: darkgoldenrod ;
-  }
+  /*p {*/
+  /*  color: darkgoldenrod ;*/
+  /*}*/
 </style>
 </head>
 <body>
@@ -19,17 +19,71 @@
 <div>
 <p id ="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
 </div>
-<input type="button" value="submit" id="testform">
+<!--<form>-->
+  <input type="text" id="testcolor">
+  <input type="button" value="submit" id="testform">
+<!--</form>-->
 <!--<script src="../js/jquery-3.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-$("h2").click(function(){
-  $(this).next().children("p").slideToggle(500);
+// $("h2").click(function(){
+//   $(this).next().children("p").slideToggle(500);
+// });
+//   jQuery("#thetest").html("I am the chosen one");
+// $(".gang").click(function(){
+//   $(this).css("color", "green");
+// });
+//Stuff below is jquery events?
+var count = 0
+$("#boi").dblclick(function (){
+
+  if(count % 2 === 0) {
+    this.style.color = "red";
+    count++
+  //  the count stuff I added was just to mess around with making stuff go back to default.
+  } else {
+    $(this).css("color", "black");
+    //just another way to change the css. using jquery
+    count++
+  }
+  console.log(count);
+
 });
-  jQuery("#thetest").html("I am the chosen one");
-$(".gang").click(function(){
-  $(this).css("color", "green");
+//Below is the other way to do it but as you can see it's longer
+
+// var boi = document.querySelector("#boi");
+//
+// var boiListener = function() {
+//   boi.style.color = "red";
+// }
+
+$("p").hover(function() {
+//  Hover in stuff below
+//   console.log("hover on")
+  $(this).css("background-color","yellow");
+}, function(){
+// hover out stuff below
+// console.log("by hover")
+  $(this).css("background-color","#FFF");
 });
+
+// $("#testform").on("click", function(){
+  // $("p").off("mouseenter"); // test both
+  // $("p").off("mouseleave","mouseenter");//You can also put multiple things you want to turn off.
+// });
+//Use .val(), to get values of text inputs on the button inside of the form? test please
+//stuff below breaks stuf above but it's cool
+
+$("#testform").click(function(){
+  $("p").css("Color", $("testcolor").val())
+});
+
+//event.target.value(gets the value of a specific element -?
+
+
+
+
+
 
 </script>
 </body>
