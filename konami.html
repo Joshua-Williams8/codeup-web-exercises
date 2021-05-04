@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .table {
+      display:flex;
+      margin: auto;
+      width: 50%;
+
+
+    }
+    .options {
+      background-color: whitesmoke;
+      flex-basis:25%;
+    }
+
+  </style>
+</head>
+
+<body>
+<div class="shown">
+  <h1>Konami Code</h1>
+</div>
+<div class="hidden">
+
+  <h2> Press space to stop sound </h2>
+  <h3> Click here to replay other sound </h3>
+  <div class="table">
+      <div class ="options">Option 1</div>
+      <div class ="options">Option 2</div>
+      <div class ="options">Option 3</div>
+      <div class ="options">Option 4</div>
+    </div>
+  </div>
+
+<!--  <audio controls autoplay muted>-->
+<!--    &lt;!&ndash;  <source src="horse.ogg" type="audio/ogg">&ndash;&gt;-->
+<!--    <source src="music/background-beat.mp3" type="audio/mpeg">-->
+<!--    Your browser does not support the audio element.-->
+<!--  </audio>-->
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+  /**
+   * @author Alexander Manzyuk <admsev@gmail.com>
+   * Copyright (c) 2012 Alexander Manzyuk - released under MIT License
+   * https://github.com/admsev/jquery-play-sound
+   * Usage: $.playSound('http://example.org/sound')
+   * $.playSound('http://example.org/sound.wav')
+   * $.playSound('/attachments/sounds/1234.wav')
+   * $.playSound('/attachments/sounds/1234.mp3')
+   * $.stopSound();
+   **/
+
+  (function ($) {
+    $.extend({
+      playSound: function () {
+        return $(
+          '<audio class="sound-player" autoplay="autoplay" style="display:none;">'
+          + '<source src="' + arguments[0] + '" />'
+          + '<embed src="' + arguments[0] + '" hidden="false" autostart="true" loop="false"/>'
+          + '</audio>'
+        ).appendTo('body');
+      },
+      stopSound: function () {
+        $(".sound-player").remove();
+      }
+    });
+  })(jQuery);
+</script>
+<script>
+  "use strict";
+  var kArray = [];
+  var mathArray = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+  // var testArray = [38, 38, 40, 40, 13];
+  var kSum = 0;
+
+  function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;
+
+    // If you don't care about the order of the elements inside
+    // the array, you should sort both arrays here.
+    // Please note that calling sort on an array will modify that array.
+    // you might want to clone your array first.
+
+    for (var i = 0; i < a.length; ++i) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+  }
+
+  $(document).keyup(function (event) {
+    console.log(event.keyCode);
+    if (event.keyCode === 13) {
+      if (arraysEqual(kArray, mathArray)) {
+        console.log("Arrays are equal");
+        alert("You have added 30 lives!")
+        //  If enter correct go
+        $("body").css("background-image","url(\"img/Streetbg.jpeg\")");
+        $(".hidden").css("display","unset");
+        $("h1").css("color","white");
+        $.playSound("music/KenHSound.mp3");
+        $.playSound("music/background-beat.mp3");
+        $("h2").css("color","white");
+        $(".options").click(function(){
+          $.playSound("music/KenHSound.mp3");
+        }).hover(function(){
+          $.playSound("music/selectStreet.mp3");
+          $(this).css("background-color","gold");
+
+        }, function(){
+          $(this).css("background-color","white");
+        });
+
+
+
+
+
+
+      } else {
+        console.log("incorrect sequence reset array");
+        kArray = [];
+      }
+    }
+  });
+
+  $(document).keyup(function (event) {
+    // console.log(event.keyCode);
+    if (event.keyCode === 13) {
+      // console.log("ignore this")
+    } else {
+      kArray.push(event.keyCode)
+      kSum += event.keyCode
+    }
+
+  });
+
+  $(document).keyup(function (event) {
+  // console.log(event.keyCode);
+    if (event.keyCode === 32)
+      $.stopSound();
+  });
+
+</script>
+</body>
+</html>

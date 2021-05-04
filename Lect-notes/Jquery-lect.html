@@ -20,9 +20,10 @@
 <p id ="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
 </div>
 <!--<form>-->
-  <input type="text" id="testcolor">
-  <input type="button" value="submit" id="testform">
+  <input type="text" id="text-color">
+  <input type="button" value="submit" id="color-btn">
 <!--</form>-->
+<!--It does not need to be in a form refer to lines below to make colorbtn work.-->
 <!--<script src="../js/jquery-3.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
@@ -79,6 +80,22 @@ $("#testform").click(function(){
 });
 
 //event.target.value(gets the value of a specific element -?
+
+
+// Click Event
+
+// document.querySelector("#color-btn").addEventListener("click", function() {
+//     console.log(document.getElementById("text-color").value);
+//     document.querySelector("body").style.color = document.getElementById("text-color").value;
+// });
+
+// jQuery Click Event
+
+function changeTextColor() {
+  $('body').css('color', $('#text-color').val())
+}
+
+$('#color-btn').click(changeTextColor);
 
 
 
