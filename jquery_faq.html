@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ</title>
+  <style>
+    .invisible{
+      visibility: hidden;
+
+    }
+    .highlight{
+      background-color: goldenrod;
+    }
+  </style>
+</head>
+<body>
+<dl>
+  <dt>How many employees are in the National Park Service?</dt>
+  <dd>Permanent, temporary, and seasonal employees: Approximately 20,000</dd>
+
+  <dt>How old is the National Park System?</dt>
+  <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. </dd>
+
+  <dt>What is the origin of the National Park Service arrowhead?</dt>
+  <dd>The components of the arrowhead may have been inspired by key attributes of the National Park System, with the sequoia tree and bison representing vegetation and wildlife, the mountains and water representing scenic and recreational values, and the arrowhead itself representing historical and archeological values.</dd>
+
+  <dt>How many areas are in the National Park System?</dt>
+  <dd>The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. </dd>
+
+  <dt>What is the largest national park site?</dt>
+  <dd>Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+
+  <dt>What is the smallest national park site?</dt>
+  <dd>Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+
+  <dt>How many people visit the national parks?</dt>
+  <dd>Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
+
+  <dt>What is the most-visited national park?</dt>
+  <dd>Blue Ridge Parkway</dd>
+
+  <dt>Where can I find a park map?</dt>
+  <dd>https://www.nps.gov/planyourvisit/maps.htm</dd>
+<!--Come back and swap me out for anchor tags.-->
+  <dt>Can I bring my pet to a national park?</dt>
+  <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities. Learn more about pets in parks.</dd>
+
+</dl>
+<a href="#" id="invis-btn">Invisible Toggle</a>
+<!--<button type="button" id="invis-btn">Invisible Toggle</button>-->
+
+<h3>Padre Island</h3>
+<ul>
+  <li>Located in Corpus Christi Texas.</li>
+  <li>The park is open 24 hours per day, 365 days per year.</li>
+  <li>Padre Island has long, hot summers and short, mild winters. Summers are very humid. Winter can bring strong cold fronts and gale force winds. </li>
+  <li>Padre Island Vehicle 1 Day Entrance Fee - $10.00</li>
+</ul>
+
+<h3>Fire Island</h3>
+<ul>
+  <li>Fire Island National Seashore's Headquarters is located in Patchogue on Long Island.</li>
+  <li>Open from 10:00AM to 5:00PM</li>
+  <li>Spring: Temperatures may range from high 30s to low 50s (F). Rain and sun are equally common. Summer: Temperatures usually range from 65 F to 90 F. Fall: Temperatures from 70 F in early autumn to 40 F later in the season may be expected. Winter: Temperatures in the 30s (F) are common, with below freezing temperatures possible.</li>
+  <li>No Entrance Fee - $0.00 but plan to pay parking and/or transportation fees for most sites.</li>
+</ul>
+
+<h3>Point Reyes</h3>
+<ul>
+  <li>Point Reyes is located along the west coast of California approximately 30 miles (50 km) north of San Francisco.</li>
+  <li>On weekdays it's open from 10:00AM to 4:30PM, and weekends it opens at 9:00AM and closes at 4:30PM.</li>
+  <li>Choke Canyon</li>
+  <li>Davis Mountains</li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$("dd").addClass("invisible")
+$("#invis-btn").click(function(event){
+  // event.preventDefault(); //Is this needed?
+  $("dd").toggleClass("invisible");
+});
+//Below makes it so each individual dt makes it's own dd show.
+$("dt").click(function(){
+  $(this).next().toggleClass("invisible");
+});
+$("dt").addClass("highlight");
+
+
+$("dt").toggleClass("highlight");
+
+$("dt").click(function(){
+  $(this).toggleClass("highlight");
+  // $(".highlight").css("background-color","gold");
+});
+</script>
+</body>
+</html>

@@ -7,6 +7,9 @@
   /*p {*/
   /*  color: darkgoldenrod ;*/
   /*}*/
+  /*::selection{*/
+  /*  background-color: green;*/
+  /*}*/
 </style>
 </head>
 <body>
@@ -24,6 +27,32 @@
   <input type="button" value="submit" id="color-btn">
 <!--</form>-->
 <!--It does not need to be in a form refer to lines below to make colorbtn work.-->
+
+<!--<ul id="textList">-->
+<!--  <li class="listThing">Linux</li>-->
+<!--  <li class="listThing">Apache</li>-->
+<!--  <li class="listThing">MySQL</li>-->
+<!--  <li class="listThing">PHP</li>-->
+<!--  <li class="listThing">Javascript</li>-->
+<!--</ul>-->
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+  <li>Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+  <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+  <li>Abilene</li>
+  <li>Big Bend</li>
+  <li>Choke Canyon</li>
+  <li>Davis Mountains</li>
+  <li>Enchanted Rock</li>
+</ul>
+
 <!--<script src="../js/jquery-3.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
@@ -97,8 +126,34 @@ function changeTextColor() {
 
 $('#color-btn').click(changeTextColor);
 
+//Some times you want to use .text() vs .html();
+//You can use html(); to grab literally what's between the tags.
+//You use the .text(); to only grab text between it and not any tags that are inside.
+var testhtml = $("#textList").html();
+var testText = $("#textList").text();
+// console.log(testhtml);
+// console.log(testText);
 
+//Some more stuff to mess around with below.
+// $("#textList").html("Smile");
+// $("#textList2").html("<li>Smile</li><li>Please</li>");
+// var testhtml = $("#textList").html();
+// var testText = $("#textList").text();
+// console.log(testhtml);
+// console.log(testText);
+// $("#textList").text("<li>Smile</li><li>Please</li>");
 
+// $('li').first().css('background-color', '#FF0');
+// $('li').last().css('background-color', '#FF0');
+
+// $('li').css('font-weight', 'bold');
+// $('#national-parks').children().css('font-weight', 'bold');
+// $('li').css('background-color', '#FF0');
+// $('li').parent().css('background-color', '#0F0');
+
+// $('#national-parks-heading').next().css('background-color', 'salmon');
+//If you use .css("property") it GETS the what that css property is so if I put
+//$("li").css("background-color") I will get back the color we put in.
 
 
 
