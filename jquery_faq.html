@@ -16,29 +16,31 @@
       width: 100%;
       display: flex;
       margin: 20px auto;
+      justify-content: space-evenly;
     }
     .box {
-      height:40px;
-      width:40px;
+      height:100px;
+      width:100px;
       border: black solid 1px;
+      background-color: aquamarine;
     }
     #left {
-      height:40px;
-      width:40px;
+      height:100%;
+      width:100%;
       order: 1;
       background-image: url("img/codeup-duck-arrow.png");
     }
     #center {
-      height:40px;
-      width:40px;
+      height:100%;
+      width:100%;
       order: 2;
       background-image: url("img/DeceptBG.png");
     }
     #right {
-      height:40px;
-      width:40px;
+      height:100%;
+      width:100%;
       order: 3;
-      background-image: url("img/Kia-stinger.png");
+      background-image: url("img/TexasBG.png");
     }
   </style>
 </head>
@@ -157,7 +159,6 @@
     $(this).children("li").last().addClass("highlight").toggleClass("highlight");
   });
 
-
   $("#li-last").click(function () {
     $("ul").each(function () {
       $(this).children("li").last().toggleClass("highlight");
@@ -175,27 +176,53 @@
   $("#left-btn").click(function(){
     var leftBox = $(".box").first();
     var leftBoxHTML = $(".box").first().html();
-    console.log(leftBox.html());
+    // console.log(leftBox.html());
 
     var swapBox = $(".box").first().next();
     var swapBoxHTML = $(".box").first().next().html();
+
+    $(".box").first().next().html(leftBoxHTML);
+    $(".box").first().html(swapBoxHTML);
 
   });
 
   $("#center-btn").click(function(){
     var centerBox = $(".box").first().next();
     var centerBoxHTML = $(".box").first().next().html();
-    console.log(centerBox.html());
+    // console.log(centerBox.html());
+
+    var leftBoxHTML = $(".box").first().html();
+    var rightBoxHTML = $(".box").last().html();
+
+    function getRandomNumber(min,max){
+      return Math.floor(Math.random() * max) + min;
+    }
+    var randomNum = getRandomNumber(1,2);
+    if (randomNum === 1) {
+      $(".box").first().next().html(leftBoxHTML);
+      $(".box").first().html(centerBoxHTML);
+    } else {
+      $(".box").first().next().html(rightBoxHTML);
+      $(".box").last().html(centerBoxHTML);
+    }
+    // Below makes the button move everything from left to right.
+    // $(".box").first().html(rightBoxHTML);
+    // $(".box").first().next().html(leftBoxHTML);
+    // $(".box").last().html(centerBoxHTML);
 
   });
 
   $("#right-btn").click(function(){
     var rightBox = $(".box").last();
     var rightBoxHTML = $(".box").last().html();
-    console.log(rightBox.html());
+    // console.log(rightBox.html());
 
     var swapBox = $(".box").first().next();
     var swapBoxHTML = $(".box").first().next().html();
+
+    $(".box").first().next().html(rightBoxHTML);
+    $(".box").last().html(swapBoxHTML);
+
   });
 
 </script>
