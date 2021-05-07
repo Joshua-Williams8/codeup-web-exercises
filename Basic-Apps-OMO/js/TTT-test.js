@@ -5,19 +5,24 @@ var boxD = "<div class=\"text-dark\">X</div>"
 // alert("Hello you will be playing as X, please click to select a spot, the page will be playing O.")
 
 $(".box").click(function () {
-  $(this).html(boxX);
-  boxOGo();
-  if (winTTT() === true) {
-    alert("You win!")
-    $(".box").off();
-  } else if (loseTTT() === true) {
-    alert("You lose!")
-    $(".box").off();
-  } else if (tieTTT === true) {
-    alert("It's a Tie!")
-    $(".box").off();
-  } else {
+  console.log($(this).html())
+  if ($(this).html() === boxD) {
+    $(this).html(boxX);
+    boxOGo();
+    if (winTTT() === true) {
+      alert("You win!")
+      $(".box").off();
+    } else if (loseTTT() === true) {
+      alert("You lose!")
+      $(".box").off();
+    } else if (tieTTT === true) {
+      alert("It's a Tie!")
+      $(".box").off();
+    } else {
 
+    }
+  } else {
+    console.log("Space taken")
   }
 });
 
@@ -73,8 +78,8 @@ function boxOGo() {
   }
 }
 
-function winTTT(){
-  if(
+function winTTT() {
+  if (
     ($("#box1").html() === boxX)
     &&
     ($("#box2").html() === boxX)
@@ -140,8 +145,9 @@ function winTTT(){
     return false
   }
 }
-function loseTTT(){
-  if(
+
+function loseTTT() {
+  if (
     ($("#box1").html() === boxO)
     &&
     ($("#box2").html() === boxO)
@@ -207,8 +213,9 @@ function loseTTT(){
     return false;
   }
 }
-function tieTTT(){
-  if(winTTT() === false && loseTTT() === false && (
+
+function tieTTT() {
+  if (winTTT() === false && loseTTT() === false && (
     ($("#box1").html() !== boxD)
     &&
     ($("#box2").html() !== boxD)
@@ -227,6 +234,6 @@ function tieTTT(){
     &&
     ($("#box9").html() !== boxD)
 
-  ));
+  )) ;
 }
 

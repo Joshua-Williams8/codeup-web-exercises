@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax lecture</title>
+</head>
+
+<body>
+<!--Ajax stands for Asynchronous JavaScript and XML. Ajax was originally intended to work with XML coming back from the server, but this does not mean you must serve up XML for the requests. JSON notation has been widely adopted for sending and retrieving data for Ajax requests.-->
+<!--It's used for pulling server data without having to refresh the page.-->
+
+<!--JavaScript Object Notation (JSON)-->
+<!--The objects properties are inside of quotes.-->
+<script>
+var JSONThing = {
+"name1": "value1",
+"name2": "value2"
+}
+</script>
+<!--default action on a form is GET-->
+<!--$.ajax("/some-url")-->
+<!--API Application Programming Interface-->
+<!--RESTful API conforms to a set of LOOSE convertions based on HTTP verbs, errors, and hyperlinks-->
+
+<!--Example line below:-->
+
+<!--$.ajax("/some-url").done(function(data, status, jqXhr) {-->
+<!--You set up code to run on the inside so it doesn't run till the object you want to pull it loaded?-->
+
+
+
+<!--3 methods you can use to callback Ajax functions-->
+<!--.done — Takes in a function that is called when the request completes successfully.
+.fail — Takes in a function that is called when a request completed with an error (e.g. the server sent back a 404).
+.always — Takes in a function that is called for both failed and successful requests.-->
+<!--Use append instead of .html? cause append adds instead of swaping.-->
+
+</body>
+</html>
