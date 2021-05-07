@@ -19,7 +19,7 @@
       text-indent: 2em;
     }
     body {
-      background-image: linear-gradient(200deg, blue, red, yellow);
+      background-image: linear-gradient(200deg, #1b1b8f, #b12222, #a9a912);
     }
     .blockquote-footer {
       color:white;
@@ -58,14 +58,14 @@
       // alert("Test load worked");
 
       data.forEach(function (dataX, indexX) {
-        inventoryData =
+        blogData =
           randomCard() +
           "<h4 class='card-header'>" + data[indexX].title.toUpperCase() + "</h4>" +
           "<p class='card-text cardText px-3'>" + data[indexX].content + "</p>" +
           "<div>" + "TAGS: " + data[indexX].categories.join(", ").toUpperCase() + "</div>" +
           "<footer class='blockquote-footer'>" + data[indexX].date + "</footer>" +
           "</div>";
-        $("#post").append(inventoryData);
+        $("#post").append(blogData);
       });
 
 
