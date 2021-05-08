@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mapbox 2</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<h1 id="coords">coords</h1>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/geocode.js"></script>
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+
+<script>
+
+  mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
+    var map = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: [-98.4897, 29.4267], // starting position [lng, lat]
+      zoom: 9 // starting zoom
+    });
+
+  // Mini Exercise 2
+  // TODO: Create an HTML file called mapbox-2.html. In this file, create a map centered
+  // TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of
+  var markerSoL = new mapboxgl.Marker({
+    draggable: true
+  })
+    .setLngLat([-74.0445, 40.6892])
+    .addTo(map);
+  // TODO: Liberty marker with the text "Statue of Liberty".
+  var popupSoL = new mapboxgl.Popup()
+  .setLngLat(markerSoL.getLngLat())
+  .setHTML("<h3 id='change'>Statue of Liberty </h3>")
+  .addTo(map);
+
+
+
+  markerSoL.on("dragend", function() {
+
+    $("h1").html(markerSoL.getLngLat().toString());
+    alert("")
+    // alert(marker.getLngLat())
+    //  side note, dragend does when it's droped
+    //  drag does WHILE DRAGGING
+    //  dragstart does once you move it initially
+  //  Don't forget to add jquery
+
+
+
+  });
+  markerSoL.setPopup(popupSoL);
+  // *BONUS - when the marker is dragged and released, display the coordinates in an H1.
+  // New York = [-74.2179, 43.2994]
+  // Statue of Liberty = [-74.0445, 40.6892]
+
+  function searchFor(string) {
+    var bro = geocode(string, MAPBOX_ACCESS_TOKEN)
+
+    return console.log(bro.PromiseResult)
+  }
+
+  console.log(searchFor("Codeup"))
+</script>
+</body>
+</html>

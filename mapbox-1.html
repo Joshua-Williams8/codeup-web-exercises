@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapbox Mini exercise</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    .meColor {
+      color:red;
+    }
+  </style>
+</head>
+<body>
+
+
+<div id='map' style='width: 400px; height: 300px; margin: 40px auto;'></div>
+
+<button type="button" id="zoomPls" style='margin: 40px auto'>Zoom in</button>
+
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<script>
+
+  mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+    center: [-98.4683, 29.5312], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
+
+
+  // function holdUp () {
+  //
+  //   map.zoom = zoom - 1
+  // }
+
+  //TODO: Mini exercise #1 - Create an HTML file named mapbox-1.html. Create a map that is centered at the San Antonio Airport with the zoom set to 12.
+  //It's above
+
+  //TODO: After 10 seconds, use a method found in the documentation to fly to the DFW Airport and change the map style to satellite streets.
+  // setTimeout(function() {
+  //   map.flyTo({center: [-97.0403, 32.8998]});
+  // }, 10000);
+
+  //      *BONUS* Create a button labeled "Zoom In", and when the button is clicked, increases the zoom value by 1.\
+$("#zoomPls").click(function(){
+  console.log(map.getZoom())
+  map.setZoom(map.getZoom() + 1);
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+
+  var marker = new mapboxgl.Marker({
+    draggable: true,
+    color: "gold"
+
+  })
+    .setLngLat([-98.4861, 29.4260])
+    .addTo(map);
+
+  marker.on("dragend", function() {
+    // alert(marker.getLngLat())
+  //  side note, dragend does when it's droped
+  //  drag does WHILE DRAGGING
+  //  dragstart does once you move it initially
+
+  });
+  var popup = new mapboxgl.Popup()
+    .setLngLat(marker.getLngLat())
+    .setHTML("<h4>Hello World!</h4>")
+    // .setMaxWidth("10px")
+    .addTo(map); //semi colon only goes on the last part? cause the it's like Im doing setLngLat().setHTML().addTo();
+
+  marker.setPopup(popup);
+//  Above attaches the marker to the popup?
+  popup.addClassName("meColor")
+</script>
+</body>
+</html>

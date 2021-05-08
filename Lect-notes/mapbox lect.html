@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapbox Lect</title>
+
+
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<script src="../js/keys.js"></script>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+<script>
+
+  mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-98.4916, 29.4252], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
+  function callMe() {
+
+  map.setStyle("mapbox://styles/mapbox/dark-v10")
+  }
+
+  var popup = new mapboxgl.Popup()
+    .setLngLat([-98.489615, 29.426827])
+    .setHTML("<p>Codeup Rocks!</p>")
+    .addTo(map)
+
+</script>
+</body>
+</html>

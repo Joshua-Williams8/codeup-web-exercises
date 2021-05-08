@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapbox maps</title>
+
+
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<button type="button" id="zoom5">Zoom 5</button>
+<button type="button" id="zoom15">Zoom 15</button>
+<button type="button" id="zoom20">Zoom 20</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script>
+
+  mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
+  var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-97.6709, 31.0689], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
+  $("#zoom5").click(function (){
+    map.setZoom(5)
+  });
+  $("#zoom15").click(function (){
+    map.setZoom(10)
+  });
+  $("#zoom20").click(function (){
+    map.setZoom(20)
+  });
+
+
+  var resLoc = [
+    {
+      name: "Nook Gyros",
+      lat: -97.6709,
+      lng: 31.0689,
+      color: "green",
+    }, {
+      name: "Cajun Crab",
+      lat: -97.6542,
+      lng: 31.0753,
+      color: "red"
+    }, {
+      name: "The Shack",
+      lat: -97.6384726,
+      lng: 31.0518745,
+      color: "brown"
+    }
+  ];
+
+  resLoc.forEach(function(res,index){
+    var testMark = new mapboxgl.Marker({
+      draggable: false,
+      color: res.color
+    })
+      .setLngLat([res.lat, res.lng])
+      .addTo(map);
+
+    var testPopup = new mapboxgl.Popup()
+      .setHTML("<h3>" + res.name + "</h3>")
+      .addTo(map);
+
+    testMark.setPopup(testPopup).togglePopup();
+  });
+
+  $("#btn").click(function() {
+    var userInput = $("#input").val();
+    geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+      console.log(info);
+      var newCenter = {
+        lng: info[0],
+        lat: info[1]
+      };
+      marker.setLngLat(newCenter);
+      popup.setHTML('<h3 class="font">' + userInput +  '</h3>');
+      map.flyTo({center: newCenter});
+    });
+  });
+
+
+</script>
+</body>
+</html>
