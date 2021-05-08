@@ -19,14 +19,28 @@
 <div class="bg-gradient-primary" style='width: 200px; height: 200px;margin: 20px auto;'></div>
 
 <div id='map' style='width: 700px; height: 700px;margin: 20px auto;'></div>
-
-<button class="btn btn-dark" type="button" id="zoom5">Zoom 5</button>
-<button class="btn btn-dark" type="button" id="zoom15">Zoom 15</button>
-<button class="btn btn-dark" type="button" id="zoom20">Zoom 20</button>
+<div class="d-flex justify-content-around">
+  <button class="btn btn-dark" type="button" id="zoom5">Zoom 5</button>
+  <button class="btn btn-dark" type="button" id="zoom15">Zoom 15</button>
+  <button class="btn btn-dark" type="button" id="zoom20">Zoom 20</button>
+</div>
 
 <div class="input-group mb-3 ">
   <div class="input-group-prepend">
-    <label class="input-group-text bg-secondary text-white" for="inputMapStyle">Options</label>
+    <label class="input-group-text bg-secondary text-white" for="inputMapZoom">Map Zoom Options</label>
+  </div>
+  <select class="custom-select bg-dark text-white" id="inputMapZoom">
+    <option selected>Choose...</option>
+    <option value="5">5</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+
+  </select>
+</div>
+
+<div class="input-group mb-3 ">
+  <div class="input-group-prepend">
+    <label class="input-group-text bg-secondary text-white" for="inputMapStyle">Map Style Options</label>
   </div>
   <select class="custom-select bg-dark text-white" id="inputMapStyle">
     <option selected>Choose...</option>
@@ -40,6 +54,7 @@
     <option value="mapbox://styles/mapbox/navigation-night-v1">Navigation Night</option>
   </select>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
@@ -64,6 +79,12 @@
   });
   $("#zoom20").click(function () {
     map.setZoom(20)
+  });
+
+  $("#inputMapZoom").change(function () {
+    var selected = $(this).val();
+    // console.log(selected)
+    map.setZoom(selected)
   });
 
 
@@ -117,9 +138,7 @@
   });
 
 
-
-
-  $("#inputMapStyle").change(function(){
+  $("#inputMapStyle").change(function () {
     var selected = $(this).val();
     // console.log(selected)
     map.setStyle(selected)
