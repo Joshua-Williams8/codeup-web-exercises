@@ -5,19 +5,45 @@
   <title>Mapbox maps</title>
 
 
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
-
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+          crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="bg-gradient-primary" style='width: 200px; height: 200px;margin: 20px auto;'></div>
 
+<div id='map' style='width: 700px; height: 700px;margin: 20px auto;'></div>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<button class="btn btn-dark" type="button" id="zoom5">Zoom 5</button>
+<button class="btn btn-dark" type="button" id="zoom15">Zoom 15</button>
+<button class="btn btn-dark" type="button" id="zoom20">Zoom 20</button>
 
-<button type="button" id="zoom5">Zoom 5</button>
-<button type="button" id="zoom15">Zoom 15</button>
-<button type="button" id="zoom20">Zoom 20</button>
+<div class="input-group mb-3 ">
+  <div class="input-group-prepend">
+    <label class="input-group-text bg-secondary text-white" for="inputMapStyle">Options</label>
+  </div>
+  <select class="custom-select bg-dark text-white" id="inputMapStyle">
+    <option selected>Choose...</option>
+    <option value="mapbox://styles/mapbox/streets-v11">Streets</option>
+    <option value="mapbox://styles/mapbox/outdoors-v11">Outdoors</option>
+    <option value="mapbox://styles/mapbox/light-v10">Light</option>
+    <option value="mapbox://styles/mapbox/dark-v10">Dark</option>
+    <option value="mapbox://styles/mapbox/satellite-v9">Satellite</option>
+    <option value="mapbox://styles/mapbox/satellite-streets-v11">Satellite Streets</option>
+    <option value="mapbox://styles/mapbox/navigation-day-v1">Navigation Day</option>
+    <option value="mapbox://styles/mapbox/navigation-night-v1">Navigation Night</option>
+  </select>
+</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+<script type="text/scss">$enable-gradients: true</script>
 <script src="js/keys.js"></script>
 <script src="js/geocode.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
@@ -30,13 +56,13 @@
     center: [-97.6709, 31.0689], // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
-  $("#zoom5").click(function (){
+  $("#zoom5").click(function () {
     map.setZoom(5)
   });
-  $("#zoom15").click(function (){
+  $("#zoom15").click(function () {
     map.setZoom(10)
   });
-  $("#zoom20").click(function (){
+  $("#zoom20").click(function () {
     map.setZoom(20)
   });
 
@@ -47,20 +73,21 @@
       lat: -97.6709,
       lng: 31.0689,
       color: "green",
+      info: ""
     }, {
       name: "Cajun Crab",
       lat: -97.6542,
       lng: 31.0753,
-      color: "red"
+      color: "red",
     }, {
       name: "The Shack",
       lat: -97.6384726,
       lng: 31.0518745,
-      color: "brown"
+      color: "brown",
     }
   ];
 
-  resLoc.forEach(function(res,index){
+  resLoc.forEach(function (res, index) {
     var testMark = new mapboxgl.Marker({
       draggable: false,
       color: res.color
@@ -75,7 +102,7 @@
     testMark.setPopup(testPopup).togglePopup();
   });
 
-  $("#btn").click(function() {
+  $("#btn").click(function () {
     var userInput = $("#input").val();
     geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
       console.log(info);
@@ -84,11 +111,19 @@
         lat: info[1]
       };
       marker.setLngLat(newCenter);
-      popup.setHTML('<h3 class="font">' + userInput +  '</h3>');
+      popup.setHTML('<h3 class="font">' + userInput + '</h3>');
       map.flyTo({center: newCenter});
     });
   });
 
+
+
+
+  $("#inputMapStyle").change(function(){
+    var selected = $(this).val();
+    // console.log(selected)
+    map.setStyle(selected)
+  });
 
 </script>
 </body>
