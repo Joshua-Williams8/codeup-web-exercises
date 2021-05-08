@@ -55,6 +55,12 @@
   </select>
 </div>
 
+<div class="input-group mb-3">
+  <input type="text" class="form-control bg-dark text-white" placeholder="Input Search Area" aria-label="Input Search Area" aria-describedby="button-addon2" id="inputGeoSearch">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary btn-secondary text-white" type="button" id="geoSearch">Search</button>
+  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
@@ -142,6 +148,20 @@
     var selected = $(this).val();
     // console.log(selected)
     map.setStyle(selected)
+  });
+
+  $("#geoSearch").click(function(){
+    var search = $("#inputGeoSearch").val();
+    console.log(search);
+    geocode(search, MAPBOX_ACCESS_TOKEN).then(function(info) {
+      console.log(info);
+      var geoCenter = {
+        lng: info[0],
+        lat: info[1]
+      };
+      map.flyTo({center: geoCenter});
+
+    });
   });
 
 </script>
