@@ -23,6 +23,7 @@
   <button class="btn btn-dark" type="button" id="zoom5">Zoom 5</button>
   <button class="btn btn-dark" type="button" id="zoom15">Zoom 15</button>
   <button class="btn btn-dark" type="button" id="zoom20">Zoom 20</button>
+  <button class="btn btn-dark" type="button" id="markers">Hide all markers</button>
 </div>
 
 <div class="input-group mb-3 ">
@@ -68,6 +69,7 @@
 <script src="js/keys.js"></script>
 <script src="js/geocode.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+
 <script>
 
   mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
@@ -86,6 +88,7 @@
   $("#zoom20").click(function () {
     map.setZoom(20)
   });
+
 
   $("#inputMapZoom").change(function () {
     var selected = $(this).val();
@@ -114,7 +117,7 @@
     }
   ];
 
-  resLoc.forEach(function (res, index) {
+  var resLocMarkers = resLoc.forEach(function (res, index) {
     var testMark = new mapboxgl.Marker({
       draggable: false,
       color: res.color
@@ -122,8 +125,19 @@
       .setLngLat([res.lat, res.lng])
       .addTo(map);
 
+    $("#markers").click(function () {
+      resLocMarkers.remove();
+    });
+
     var testPopup = new mapboxgl.Popup()
-      .setHTML("<h3>" + res.name + "</h3>")
+      .setHTML("<div class=\"card\" >\n" +
+        "  <img src=\"img/140-place-holder.png\" class=\"card-img-top\" alt=\"...\">\n" +
+        "  <div class=\"card-body\">\n" +
+        "    <h5 class=\"card-title\">" +res.name+ "</h5>\n" +
+        "    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n" +
+        "    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n" +
+        "  </div>\n" +
+        "</div>")
       .addTo(map);
 
     testMark.setPopup(testPopup).togglePopup();
@@ -165,5 +179,6 @@
   });
 
 </script>
+
 </body>
 </html>
