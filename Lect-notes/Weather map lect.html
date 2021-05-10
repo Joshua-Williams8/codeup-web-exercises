@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather map</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<script src="../js/keys.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<script>
+  var coords = [];
+
+  var sevenDays = [];
+  $.ajax(" https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current,hourly,minutely&units=imperial&appid=" + OWM_TOKEN).done(function (resp) {
+    sevenDays = [
+      {
+        day: resp.daily[0],
+      }, {
+        day: resp.daily[1]
+      }, {
+        day: resp.daily[2]
+      }, {
+        day: resp.daily[3]
+      }, {
+        day: resp.daily[4]
+      }, {
+        day: resp.daily[5]
+      }, {
+        day: resp.daily[6]
+      }, {
+        day: resp.daily[7]
+      },
+    ]
+    console.log(sevenDays)
+    console.log(resp)
+    console.log(resp.daily[0])
+    console.log(resp.daily[0].dt * 1000)
+    var today = resp.daily[0]
+    var todayDate = new Date(today.dt * 1000)
+    console.log(todayDate)
+    //  dt * 1000? but uh oof.
+  });
+
+</script>
+</body>
+</html>

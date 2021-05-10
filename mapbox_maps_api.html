@@ -16,9 +16,9 @@
           crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="bg-gradient-primary" style='width: 200px; height: 200px;margin: 20px auto;'></div>
+<!--<div class="bg-gradient-primary" style='width: 200px; height: 200px;margin: 20px auto;'></div>-->
 
-<div id='map' style='width: 700px; height: 700px;margin: 20px auto;'></div>
+<div id='map' style='width: 700px; height: 600px;margin: 20px auto;'></div>
 <div class="d-flex justify-content-around">
   <button class="btn btn-dark" type="button" id="zoom5">Zoom 5</button>
   <button class="btn btn-dark" type="button" id="zoom15">Zoom 15</button>
@@ -65,7 +65,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
-<script type="text/scss">$enable-gradients: true</script>
 <script src="js/keys.js"></script>
 <script src="js/geocode.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
@@ -75,7 +74,7 @@
   mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN
   var map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    style: 'mapbox://styles/mapbox/dark-v10', // style URL
     center: [-97.6709, 31.0689], // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
