@@ -96,6 +96,13 @@
     map.setZoom(selected)
   });
 
+  $("#markers").click(function () {
+    // resLocMarkers.remove();
+    removeMarkerArray.forEach(function(markerx,index){
+    markerx.remove();
+    });
+  });
+
 
   var resLoc = [
     {
@@ -117,17 +124,19 @@
     }
   ];
 
-  var resLocMarkers = resLoc.forEach(function (res, index) {
+  var removeMarkerArray = [];
+
+  resLoc.forEach(function (res, index) {
     var testMark = new mapboxgl.Marker({
       draggable: false,
-      color: res.color
+      color: res.color,
+
     })
       .setLngLat([res.lat, res.lng])
       .addTo(map);
+    removeMarkerArray.push(testMark);
 
-    $("#markers").click(function () {
-      resLocMarkers.remove();
-    });
+
 
     var testPopup = new mapboxgl.Popup()
       .setHTML("<div class=\"card\" >\n" +
