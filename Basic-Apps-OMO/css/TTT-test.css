@@ -1,3 +1,22 @@
+body{
+  background: linear-gradient(90deg, cyan, green, yellow,red);
+  background-size: 400%;
+  animation: change 10s ease-in-out alternate infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position :0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+
+}
 .box {
   font-size: 10em;
   border: solid grey 3px;

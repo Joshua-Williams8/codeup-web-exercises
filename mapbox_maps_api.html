@@ -110,17 +110,22 @@
       lat: -97.6709,
       lng: 31.0689,
       color: "green",
-      info: ""
+      info: "We sell Gyros!",
+      picture: "<img src=\"img/gryo.jpeg\" class=\"card-img-top\" alt=\"...\">\n"
     }, {
       name: "Cajun Crab",
       lat: -97.6542,
       lng: 31.0753,
       color: "red",
+      info: "We sell Cajun Seafood!",
+      picture: "<img src=\"img/crab.jpeg\" class=\"card-img-top\" alt=\"...\">\n"
     }, {
       name: "The Shack",
       lat: -97.6384726,
       lng: 31.0518745,
       color: "brown",
+      info: "We sell Caribbean Seafood!",
+      picture: "<img src=\"img/the-shack.jpeg\" class=\"card-img-top\" alt=\"...\">\n"
     }
   ];
 
@@ -140,10 +145,10 @@
 
     var testPopup = new mapboxgl.Popup()
       .setHTML("<div class=\"card\" >\n" +
-        "  <img src=\"img/140-place-holder.png\" class=\"card-img-top\" alt=\"...\">\n" +
+        res.picture +
         "  <div class=\"card-body\">\n" +
         "    <h5 class=\"card-title\">" +res.name+ "</h5>\n" +
-        "    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n" +
+        "    <p class=\"card-text\">" + res.info + "</p>\n" +
         "    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n" +
         "  </div>\n" +
         "</div>")
@@ -182,10 +187,52 @@
         lng: info[0],
         lat: info[1]
       };
+
       map.flyTo({center: geoCenter});
 
+      var markerNew = new mapboxgl.Marker({
+        draggable: false,
+        color: "blue",
+
+      })
+        .setLngLat(geoCenter)
+        .addTo(map);
+
+
+      removeMarkerArray.push(markerNew);
+
+
+
+      // map.flyTo({center: geoCenter});
+
+
+      function animateMarker(timestamp) {
+        var radius = geoCenter;
+
+// Update the data to a new position based on the animation timestamp. The
+// divisor in the expression `timestamp / 1000` controls the animation speed.
+        markerNew.setLngLat([
+          // Math.cos(timestamp / 1000) *radius.lng,
+          radius.lng,
+          (Math.cos((timestamp) / 1000) * (radius.lat))
+        ]);
+
+// Ensure it's added to the map. This is safe to call if it's already added.
+//         marker.addTo(map);
+
+// Request the next frame of the animation.
+        requestAnimationFrame(animateMarker);
+      }
+      // Start the animation.
+      requestAnimationFrame(animateMarker);
     });
   });
+
+
+
+
+
+
 
 </script>
 
