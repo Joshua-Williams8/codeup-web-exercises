@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+
 }
 
 body{
@@ -28,7 +29,7 @@ body{
 #days {
   width: 95%;
   margin: 10px auto 10px auto;
-  background: rgba(0, 0, 0, 0);
+  /*background: rgba(0, 0, 0, 0);*/
   height: 300px;
   /*overflow-x: auto;*/
   /*overflow-y: hidden;*/
@@ -38,24 +39,65 @@ body{
 }
 .weatherCard {
   width: 20%;
-  /*background: rgba(0, 0, 0, 0);*/
-  /*border: none*/
+  /*background-color: #5a5959;*/
+  border: 1px solid rgba(255, 255, 255, 0.32);
 }
 .icons{
   height: 40%;
-  background: aliceblue;
+  background-color: #3c7885;
 }
 .cardInfo{
   height: 40%;
-  border: none
-
+  border: none;
+  /*background-color: #5a5959;*/
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .card-title {
-  background: aliceblue;
+  /*background-color: #5a5959;*/
+  padding-top: 5px;
+
 }
 .cardList {
+  /*background-color: #5a5959;*/
+  /*justify-content: space-between;*/
+  text-align: center;
+
 
 }
 .jumbotron {
   height:20px;
+}
+
+.grow{
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1) ;
+}
+/* Add this to cards*/
+.list-group-item {
+  background: rgba(52, 58, 64, 0);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: .50rem 1.25rem;
+}
+
+.fa-temperature-high {
+  /*color: linear-gradient(200deg, #ff0000, #b33100, #99992d);*/
+  /*color: white;*/
+  /*font-size: 72px;*/
+  background: -webkit-linear-gradient(#de0000, #a76f0e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-temperature-low {
+  /*background-image: linear-gradient(200deg, blue, red, yellow);*/
+  /*color: white;*/
+  background: -webkit-linear-gradient(#0038de, #d6d6d6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: end;
+  /*margin-left: auto;*/
 }

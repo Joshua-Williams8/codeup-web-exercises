@@ -70,7 +70,9 @@ function weatherAjax(lng,lat) {
     }
 
     function rainHTML(day) {
-      return weatherData.daily[day].pop.toFixed(2) * 100 + "%";
+     var stuff = weatherData.daily[day].pop.toFixed(2) * 100;
+     stuff = stuff.toFixed(0);
+     return stuff + "%";
     }
 
     function humidHTML(day) {
@@ -78,18 +80,22 @@ function weatherAjax(lng,lat) {
     }
 
 
-    // function capitalizeFirst(string){
-    //
-    //   var stringArray = string.toLowerCase().split(" ");
-    //   var resultArray = [];
-    //   stringArray.forEach(function(element,index){
-    //     var elementArray = element.split("");
-    //     var firstLetter = elementArray[0].toUpperCase();
-    //     elementArray.splice(0,1,firstLetter);
-    //     element = elementArray.join("")
-    //   });
-    //   return stringArray.join();
-    // }
+    function capitalizeFirst(string){
+
+      var stringArray = string.toLowerCase().split(" ");
+      var resultArray = [];
+      stringArray.forEach(function(element,index){
+        var elementArray = element.split("");
+        // console.log(elementArray)
+        var firstLetter = elementArray[0].toUpperCase();
+        // console.log(firstLetter)
+        elementArray.splice(0,1,firstLetter);
+        // console.log(elementArray)
+        element = elementArray.join("")
+        resultArray.push(element);
+      });
+      return resultArray.join(" ");
+    }
 
 
 
@@ -103,15 +109,15 @@ function weatherAjax(lng,lat) {
         // console.log(day,index)
 
         $("#days").append(
-          "<div class=\"card weatherCard\">\n" +
+          "<div class=\"card weatherCard text-white bg-dark\">\n" +
           "    <img class='icons' src=\"http://openweathermap.org/img/wn/" + weatherData.daily[index].weather[0].icon + "@2x.png\n\" class=\"card-img-top\" alt=\"...\">\n" +
           "    <div class=\"card-body cardInfo p-0\">\n" +
           "      <h5 class=\"card-title pl-2\">" + dayTimeHTML(index).day + "</h5>\n" +
           "      <ul class=\"list-group cardList m-0 py-0\">\n" +
           "        <li class=\"list-group-item m-0 py-0\">" + dateHTML(index).year + "-" + dateHTML(index).month + "-" +  dateHTML(index).date + "</li>\n" +
 
-          "        <li class=\"list-group-item m-0 py-0\">" + "Min: " + tempHTML(index).min + " Max: " + tempHTML(index).max + "</li>\n" +
-          "        <li class=\"list-group-item m-0 py-0\">" + weatherHTML(index).description.toUpperCase() + "</li>\n" +
+          "        <li class=\"list-group-item m-0 py-0\">" + "<i class=\"fas fa-temperature-high\"></i>" + tempHTML(index).max + " - " + " <i class=\"fas fa-temperature-low\"></i>" + tempHTML(index).min + "</li>\n" +
+          "        <li class=\"list-group-item m-0 py-0\">" + capitalizeFirst(weatherHTML(index).description) + "</li>\n" +
           "        <li class=\"list-group-item m-0 py-0\">" + "Chance of Rain: " + rainHTML(index) + "</li>\n" +
           "        <li class=\"list-group-item m-0 py-0\">"+ "Humidity: " + humidHTML(index) +"</li>\n" +
           "      </ul>\n" +
@@ -206,19 +212,19 @@ removeMarkerArray.push(marker);
     map.setStyle(selected)
   });
 
-  $("#btn").click(function () {
-    var userInput = $("#input").val();
-    geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
-      console.log(info);
-      var newCenter = {
-        lng: info[0],
-        lat: info[1]
-      };
-      marker.setLngLat(newCenter);
-      // popup.setHTML('<h3 class="font">' + userInput + '</h3>');
-      map.flyTo({center: newCenter,zoom: 9,});
-    });
-  });
+  // $("#btn").click(function () {
+  //   var userInput = $("#input").val();
+  //   geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+  //     console.log(info);
+  //     var newCenter = {
+  //       lng: info[0],
+  //       lat: info[1]
+  //     };
+  //     marker.setLngLat(newCenter);
+  //     // popup.setHTML('<h3 class="font">' + userInput + '</h3>');
+  //     map.flyTo({center: newCenter,zoom: 9,});
+  //   });
+  // });
 
   $("#geoSearch").click(function () {
     var search = $("#inputGeoSearch").val();
