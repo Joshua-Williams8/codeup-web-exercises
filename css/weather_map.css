@@ -41,13 +41,14 @@ body{
   width: 20%;
   /*background-color: #5a5959;*/
   border: 1px solid rgba(255, 255, 255, 0.32);
+
 }
 .icons{
-  height: 40%;
+  flex-basis: 40%;
   background-color: #3c7885;
 }
 .cardInfo{
-  height: 40%;
+  flex-basis: 50%;
   border: none;
   /*background-color: #5a5959;*/
   display:flex;
@@ -63,6 +64,7 @@ body{
   /*background-color: #5a5959;*/
   /*justify-content: space-between;*/
   text-align: center;
+  display: flex;
 
 
 }
@@ -80,7 +82,9 @@ body{
 .list-group-item {
   background: rgba(52, 58, 64, 0);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  padding: .50rem 1.25rem;
+  padding: .80rem 1rem;
+  flex-basis: 20%;
+  font-size: 0.9rem;
 }
 
 .fa-temperature-high {

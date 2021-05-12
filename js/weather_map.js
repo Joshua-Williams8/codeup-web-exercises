@@ -109,10 +109,10 @@ function weatherAjax(lng,lat) {
         // console.log(day,index)
 
         $("#days").append(
-          "<div class=\"card weatherCard text-white bg-dark\">\n" +
+          "<div class=\"card weatherCard text-white bg-dark mx-2 grow\">\n" +
           "    <img class='icons' src=\"http://openweathermap.org/img/wn/" + weatherData.daily[index].weather[0].icon + "@2x.png\n\" class=\"card-img-top\" alt=\"...\">\n" +
           "    <div class=\"card-body cardInfo p-0\">\n" +
-          "      <h5 class=\"card-title pl-2\">" + dayTimeHTML(index).day + "</h5>\n" +
+          "      <h4 class=\"card-title pl-2\">" + dayTimeHTML(index).day + "</h4>\n" +
           "      <ul class=\"list-group cardList m-0 py-0\">\n" +
           "        <li class=\"list-group-item m-0 py-0\">" + dateHTML(index).year + "-" + dateHTML(index).month + "-" +  dateHTML(index).date + "</li>\n" +
 
@@ -168,6 +168,7 @@ function weatherAjax(lng,lat) {
     marker = new mapboxgl.Marker({
       draggable: true,
       color: "limegreen",
+
 
     })
       .setLngLat(newCenter)
