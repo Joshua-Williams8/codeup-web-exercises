@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mapbox maps</title>
+  <title>Weather Map</title>
 
 
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
@@ -14,57 +14,72 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
           crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
 <!--<div class="bg-gradient-primary" style='width: 200px; height: 200px;margin: 20px auto;'></div>-->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="navbar-brand" href="#">Weather App</div>
 
-<div class="d-flex justify-content-center" id="days">
-  <div class="card" style="width: 15rem;">
-    <img src="img/140-place-holder.png" class="card-img-top" alt="...">
-    <div class="card-body p-0">
-      <h5 class="card-title pl-2">Today</h5>
-      <ul class="list-group m-0 p-0">
-        <li class="list-group-item m-0 p-0" id="day0Date">day0Date</li>
-        <li class="list-group-item m-0 p-0" id="day0Rain">day0Rain</li>
-        <li class="list-group-item m-0 p-0" id="day0Temp">day0Temp</li>
-        <li class="list-group-item m-0 p-0" id="day0Desc">day0Desc</li>
-        <li class="list-group-item m-0 p-0" id="day0Humid">day0Humid</li>
-      </ul>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarText">
+<!--    <ul class="navbar-nav mr-auto">-->
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">Features</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">Pricing</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+    <span class="navbar-text ml-auto text-white" id="markerLocation">
+      Current Location
+    </span>
+  </div>
+</nav>
+
+
+<div class="d-flex justify-content-center mx-auto" id="days" ;>
+  <!--Cards go in here-->
+  <div class="spinner-border" style="width: 12rem; height: 12rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border" style="width: 12rem; height: 12rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border" style="width: 12rem; height: 12rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border" style="width: 12rem; height: 12rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border" style="width: 12rem; height: 12rem;" role="status">
+    <span class="sr-only">Loading...</span>
   </div>
 
-  <div class="card" style="width: 15rem;">
-    <img src="img/140-place-holder.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+</div>
 
-  <div class="card" style="width: 15rem;">
-    <img src="img/140-place-holder.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<div class="input-group mb-3 inputs">
+  <input type="text" class="form-control form-control-lg bg-dark text-white" placeholder="Input Search Area"
+         aria-label="Input Search Area" aria-describedby="button-addon2" id="inputGeoSearch">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary btn-secondary text-white" type="button" id="geoSearch">Search</button>
   </div>
 </div>
 
-<div id='map' style='width: 700px; height: 400px;margin: 20px auto;'></div>
-<div class="d-flex justify-content-around">
-  <button class="btn btn-dark" type="button" id="markers">Hide all markers</button>
+<div id='map' style='width: 95%; height: 350px;margin: 10px auto;'>
 </div>
+<!--<div class="d-flex justify-content-around">-->
+<!--  <button class="btn btn-dark" type="button" id="markers">Hide all markers</button>-->
+<!--</div>-->
 
 
-
-<div class="input-group mb-3 ">
+<div class="input-group mb-3 inputs">
   <div class="input-group-prepend">
     <label class="input-group-text bg-secondary text-white" for="inputMapStyle">Map Style Options</label>
   </div>
-  <select class="custom-select bg-dark text-white" id="inputMapStyle">
+  <select class="custom-select custom-select-lg bg-dark text-white" id="inputMapStyle">
     <option selected>Choose...</option>
     <option value="mapbox://styles/mapbox/streets-v11">Streets</option>
     <option value="mapbox://styles/mapbox/outdoors-v11">Outdoors</option>
@@ -77,12 +92,6 @@
   </select>
 </div>
 
-<div class="input-group mb-3">
-  <input type="text" class="form-control bg-dark text-white" placeholder="Input Search Area" aria-label="Input Search Area" aria-describedby="button-addon2" id="inputGeoSearch">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary btn-secondary text-white" type="button" id="geoSearch">Search</button>
-  </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>

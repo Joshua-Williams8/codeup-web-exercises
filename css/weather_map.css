@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(90deg, #4b6763, #6dafe2, #e5e58e, #4a2c1f);
+  background-size: 400%;
+  animation: change 10s ease-in-out alternate infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+.inputs {
+  width: 95%;
+  margin: 0 auto 10px auto;
+}
+
+#days {
+  width: 95%;
+  margin: 10px auto 10px auto;
+  background: rgba(0, 0, 0, 0);
+  height: 300px;
+  /*overflow-x: auto;*/
+  /*overflow-y: hidden;*/
+
+}
+#map {
+}
+.weatherCard {
+  width: 20%;
+  /*background: rgba(0, 0, 0, 0);*/
+  /*border: none*/
+}
+.icons{
+  height: 40%;
+  background: aliceblue;
+}
+.cardInfo{
+  height: 40%;
+  border: none
+
+}
+.card-title {
+  background: aliceblue;
+}
+.cardList {
+
+}
+.jumbotron {
+  height:20px;
+}
