@@ -271,9 +271,15 @@ function restString(string){
   console.log(stringArray)
   return stringArray.join("");
 }
+// function isNumeric(input){
+//   return typeof input === "number"
+// }
+
 function isNumeric(input){
-  return typeof input === "number"
+  input = input * 1
+  return !isNaN(input)
 }
+
 function countString(string){
   return string.length;
 }

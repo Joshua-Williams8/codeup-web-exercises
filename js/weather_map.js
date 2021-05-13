@@ -109,7 +109,7 @@ function weatherAjax(lng,lat) {
         // console.log(day,index)
 
         $("#days").append(
-          "<div class=\"card weatherCard text-white bg-dark mx-2 grow\">\n" +
+          "<div class=\"card weatherCard text-white bg-dark mx-2 grow animated fadeInDown\">\n" +
           "    <img class='icons' src=\"http://openweathermap.org/img/wn/" + weatherData.daily[index].weather[0].icon + "@2x.png\n\" class=\"card-img-top\" alt=\"...\">\n" +
           "    <div class=\"card-body cardInfo p-0\">\n" +
           "      <h4 class=\"card-title pl-2\">" + dayTimeHTML(index).day + "</h4>\n" +
