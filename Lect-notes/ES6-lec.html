@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 with jquery?</title>
+  <style>
+    /*p {*/
+    /*  color: darkgoldenrod ;*/
+    /*}*/
+    /*::selection{*/
+    /*  background-color: green;*/
+    /*}*/
+  </style>
+</head>
+<body>
+<div id="guy">bada</div>
+<div class="gang">bing</div>
+<div class="gang">bam</div>
+<div id="boi">boozle</div>
+
+<h2>Stuff</h2>
+<div>
+  <p id="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
+</div>
+<!--<form>-->
+<input type="text" id="text-color">
+<input type="button" value="submit" id="color-btn">
+<!--</form>-->
+<!--It does not need to be in a form refer to lines below to make colorbtn work.-->
+
+<!--<ul id="textList">-->
+<!--  <li class="listThing">Linux</li>-->
+<!--  <li class="listThing">Apache</li>-->
+<!--  <li class="listThing">MySQL</li>-->
+<!--  <li class="listThing">PHP</li>-->
+<!--  <li class="listThing">Javascript</li>-->
+<!--</ul>-->
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+  <li class="boi1">Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+  <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+  <li class="boi2">Abilene</li>
+  <li>Big Bend</li>
+  <li>Choke Canyon</li>
+  <li>Davis Mountains</li>
+  <li>Enchanted Rock</li>
+</ul>
+
+
+<!--<script src="../js/jquery-3.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  // // bruh
+  // var oldWay = Math.pow(4, 2);
+  // console.log(oldWay);
+  // var newWay = 4 ** 2;
+  // console.log(newWay);
+  // //  Var variables declared with var are function-scoped. This means that if a variable is declared anywhere else besides a function using var it will always exist in a global scope
+  //
+  // //  ex
+  // for (var i = 0; i <= 5; i++) {
+  //   console.log(i);
+  // }
+  // i = "hello";
+  // console.log(i);
+  // //  Able to reassign it long as it's outside of a function, not redefine...
+  // if (i === "hello") {
+  //   var bubbles = "bububububbles";
+  //   console.log(bubbles);
+  // }
+  // bubbles = "pop";
+  // console.log(bubbles);
+  // function test() {
+  //   //logMe is function scoped because it was declared and defined inside of this function. It will only be accessible inside the function.
+  //   var logMe = "Hello!";
+  //   bubbles = "*floating*";
+  //   return logMe;
+  // }
+  // console.log(test());
+  // console.log(bubbles);
+  // // console.log(logMe);
+  //  I commented everything but just command shift on it k
+
+  //  CONST is block-scoped. The variable declared with const cannot be redeclared or reassigned.
+
+  // const dude = 5;
+  // // console.log(dude);
+  // // dude = 3;
+  // // const dude = 2;
+  // // var dude = 2;
+  // //
+  // // console.log(dude);
+  //
+  // if (dude === 5) {
+  //   //Doesn't go outside with const, where var will? because it's block scoped.
+  //   const brodie = 1840914910;
+  // }
+  // console.log(brodie);
+  //  interesting cause it doesn't show up on the outside of the if statement?
+
+  //  LET defines variables that are block-scoped, and variables declared with const, the variables with let cannot be REDECLARED, but they CAN be reassigned.
+  //   let bada = "bing";
+  //   console.log(bada);
+  //   // let bada = "dude";
+  //   bada = "hi";
+  //   console.log(bada);
+  // let num = 0
+  //   const num = 0
+
+  // function bada(n){
+  //   if (n == 6) {
+  //     let num = 2
+  //   }
+  //   console.log(num)
+  // }
+  // bada(6)
+
+  // for(let i = 0; i < 5; i++){
+  //   console.log(i)
+  // }
+  // console.log(i);
+
+  //template strings - use allow for interpolation in sptrings. Variables and expression can be read in template strings.They use back ticks to recognize variables and expressions
+
+//   let bada = "bing";
+//   // console.log(`My gut ${bada}`); //Back ticks are the `` on the tidle button, so you don't have to concatenate like before
+//   // console.log("my guy " + bada);
+//   // console.log(`My gut ${bada.toUpperCase()} in caps`);
+//   let oof = ["oof1", "oof2", "oof3"]
+//   let parks = `<ul>
+// <li>${oof[0]}</li>
+// <li>${oof[1]}</li>
+// <li>${oof[2]}</li>
+// <li>${oof[3]}</li>
+// </ul>`
+//   document.write(parks);
+//   // for (let i = 0; i < oof.length; i++){
+//   //   console.log(oof[i])
+//   // }
+//   // oof.forEach(function(oofx,index){
+//   //   console.log(oofx)
+//   //   console.log(oofx[index]) //shows the letter at the index lol
+//   // });
+//
+//   for (let oofN of oof) {
+//     console.log(oofN);
+//   }
+//   //  Above we don't have an index we can access, but We can hit EVERY element inside of an array.
+// let listItems = $("li");
+//   console.log(listItems);
+//   for (let listItem of listItems) {
+//     listItem.innerHTML += " is an awesome park!"
+//   } UP TO 111
+
+//  Arrow functions
+//   function bada() {
+//     return "boop bop";
+//   }
+//   console.log(bada());
+//
+//   const bada2 = function() {
+//     return "boop bop"
+//   }
+//   console.log(bada2());
+//
+//   const bada3 = () => "this boop bop is return";
+//   console.log(bada3());
+//
+//   const bada4 = bing => {
+//     return bing + " boop bop is return";
+//   }
+//   console.log(bada4("bing"));
+//
+//   const bada5 = (bing,bam) => {
+//     return bing + bam + " boop bop is return";
+//   }
+//   console.log(bada5("bing","bam"));
+
+//  object property variable assignment shorthand
+
+//   var name = "namebro";
+//   var distance = 4.2;
+//
+//   var es5Object = {
+//     name: name,
+//     distance: distance
+//   }
+//
+//   // let name6 = "namebruh";
+//   // let distance6 = 5.2
+//
+//   let es6Object = {
+//     name6: "hi bro",
+//     distance6: 314
+//   };
+//
+//   // You can use the NAME OF THE VARIABLE to be the property name, and the value is the value.
+//   console.log(es5Object);
+//   // console.log(es6Object);
+// //  Object properties get changed to alphabetical in the console lol didn't notice.
+//
+//
+// //  ES6 Pull properties
+//
+//   let {name6, distance6} = es6Object;
+//
+//   console.log(name6,distance6);
+// //  We pulled the value of name6 and declared it to a let, so it's like I wrote:
+// //  let name6 = "hi bro". without having to it.
+//
+//   let es6Object2 = [{
+//     name6: "hi bro",
+//     distance6: 314
+//   }, {
+//     name6: "brodie",
+//     distance6: 23
+//   }
+//   ];
+//   function testPull(arrayObject) {
+//     for (let pull of arrayObject) {
+//       let {name6, distance6} = pull;
+//       console.log(`Name = ${name6} and distance = ${distance6}`)
+//     }
+//   }
+// console.log(es6Object2);
+  let es6Object2 = [{
+    name6: "hi bro",
+    distance6: 314
+  }, {
+    name6: "brodie",
+    distance6: 23
+  }
+  ];
+
+  let [x, y] = es6Object2;
+  console.log(x,y);
+
+</script>
+</body>
+</html>

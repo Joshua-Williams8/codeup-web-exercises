@@ -27,10 +27,11 @@ body{
 }
 
 #days {
-  width: 95%;
+  width: calc(95% + 16px);
   margin: 10px auto 10px auto;
   /*background: rgba(0, 0, 0, 0);*/
-  height: 300px;
+  height: 260px;
+  /*height: 300px;*/
   /*overflow-x: auto;*/
   /*overflow-y: hidden;*/
 
@@ -72,17 +73,17 @@ body{
   height:20px;
 }
 
-.grow{
-  transition: all .2s ease-in-out;
-}
-.grow:hover {
-  transform: scale(1.1) ;
-}
+/*.grow{*/
+/*  transition: all .2s ease-in-out;*/
+/*}*/
+/*.grow:hover {*/
+/*  transform: scale(1.1) ;*/
+/*}*/
 /* Add this to cards*/
 .list-group-item {
   background: rgba(52, 58, 64, 0);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  padding: .80rem 1rem;
+  padding: .80rem .50rem;
   flex-basis: 20%;
   font-size: 0.9rem;
 }
