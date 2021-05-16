@@ -13,15 +13,10 @@
   </style>
 </head>
 <body>
-<div id="guy">bada</div>
-<div class="gang">bing</div>
-<div class="gang">bam</div>
-<div id="boi">boozle</div>
+
 
 <h2>Stuff</h2>
-<div>
-  <p id="thetest" data-state="para">bada bing bam bop booom long paragrapth will be going here brother my guy brody </p>
-</div>
+
 <!--<form>-->
 <input type="text" id="text-color">
 <input type="button" value="submit" id="color-btn">
@@ -57,6 +52,9 @@
 <!--<script src="../js/jquery-3.js"></script>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--<script src="../js/es6.js"></script>-->
+<script src="../js/map-filter-reduce.js"></script>
+<!--<script src="../js/promises.js"></script>-->
 <script>
   // // bruh
   // var oldWay = Math.pow(4, 2);
@@ -130,118 +128,159 @@
 
   //template strings - use allow for interpolation in sptrings. Variables and expression can be read in template strings.They use back ticks to recognize variables and expressions
 
-//   let bada = "bing";
-//   // console.log(`My gut ${bada}`); //Back ticks are the `` on the tidle button, so you don't have to concatenate like before
-//   // console.log("my guy " + bada);
-//   // console.log(`My gut ${bada.toUpperCase()} in caps`);
-//   let oof = ["oof1", "oof2", "oof3"]
-//   let parks = `<ul>
-// <li>${oof[0]}</li>
-// <li>${oof[1]}</li>
-// <li>${oof[2]}</li>
-// <li>${oof[3]}</li>
-// </ul>`
-//   document.write(parks);
-//   // for (let i = 0; i < oof.length; i++){
-//   //   console.log(oof[i])
-//   // }
-//   // oof.forEach(function(oofx,index){
-//   //   console.log(oofx)
-//   //   console.log(oofx[index]) //shows the letter at the index lol
-//   // });
-//
-//   for (let oofN of oof) {
-//     console.log(oofN);
-//   }
-//   //  Above we don't have an index we can access, but We can hit EVERY element inside of an array.
-// let listItems = $("li");
-//   console.log(listItems);
-//   for (let listItem of listItems) {
-//     listItem.innerHTML += " is an awesome park!"
-//   } UP TO 111
+  //   let bada = "bing";
+  //   // console.log(`My gut ${bada}`); //Back ticks are the `` on the tidle button, so you don't have to concatenate like before
+  //   // console.log("my guy " + bada);
+  //   // console.log(`My gut ${bada.toUpperCase()} in caps`);
+  //   let oof = ["oof1", "oof2", "oof3"]
+  //   let parks = `<ul>
+  // <li>${oof[0]}</li>
+  // <li>${oof[1]}</li>
+  // <li>${oof[2]}</li>
+  // <li>${oof[3]}</li>
+  // </ul>`
+  //   document.write(parks);
+  //   // for (let i = 0; i < oof.length; i++){
+  //   //   console.log(oof[i])
+  //   // }
+  //   // oof.forEach(function(oofx,index){
+  //   //   console.log(oofx)
+  //   //   console.log(oofx[index]) //shows the letter at the index lol
+  //   // });
+  //
+  //   for (let oofN of oof) {
+  //     console.log(oofN);
+  //   }
+  //   //  Above we don't have an index we can access, but We can hit EVERY element inside of an array.
+  // let listItems = $("li");
+  //   console.log(listItems);
+  //   for (let listItem of listItems) {
+  //     listItem.innerHTML += " is an awesome park!"
+  //   } UP TO 111
 
-//  Arrow functions
-//   function bada() {
-//     return "boop bop";
-//   }
-//   console.log(bada());
-//
-//   const bada2 = function() {
-//     return "boop bop"
-//   }
-//   console.log(bada2());
-//
-//   const bada3 = () => "this boop bop is return";
-//   console.log(bada3());
-//
-//   const bada4 = bing => {
-//     return bing + " boop bop is return";
-//   }
-//   console.log(bada4("bing"));
-//
-//   const bada5 = (bing,bam) => {
-//     return bing + bam + " boop bop is return";
-//   }
-//   console.log(bada5("bing","bam"));
+  //  Arrow functions
+  //   function bada() {
+  //     return "boop bop";
+  //   }
+  //   console.log(bada());
+  //
+  //   const bada2 = function() {
+  //     return "boop bop"
+  //   }
+  //   console.log(bada2());
+  //
+  //   const bada3 = () => "this boop bop is return";
+  //   console.log(bada3());
+  //
+  //   const bada4 = bing => {
+  //     return bing + " boop bop is return";
+  //   }
+  //   console.log(bada4("bing"));
+  //
+  //   const bada5 = (bing,bam) => {
+  //     return bing + bam + " boop bop is return";
+  //   }
+  //   console.log(bada5("bing","bam"));
 
-//  object property variable assignment shorthand
+  //  object property variable assignment shorthand
 
-//   var name = "namebro";
-//   var distance = 4.2;
-//
-//   var es5Object = {
-//     name: name,
-//     distance: distance
-//   }
-//
-//   // let name6 = "namebruh";
-//   // let distance6 = 5.2
-//
-//   let es6Object = {
-//     name6: "hi bro",
-//     distance6: 314
-//   };
-//
-//   // You can use the NAME OF THE VARIABLE to be the property name, and the value is the value.
-//   console.log(es5Object);
-//   // console.log(es6Object);
-// //  Object properties get changed to alphabetical in the console lol didn't notice.
-//
-//
-// //  ES6 Pull properties
-//
-//   let {name6, distance6} = es6Object;
-//
-//   console.log(name6,distance6);
-// //  We pulled the value of name6 and declared it to a let, so it's like I wrote:
-// //  let name6 = "hi bro". without having to it.
-//
-//   let es6Object2 = [{
-//     name6: "hi bro",
-//     distance6: 314
-//   }, {
-//     name6: "brodie",
-//     distance6: 23
-//   }
-//   ];
-//   function testPull(arrayObject) {
-//     for (let pull of arrayObject) {
-//       let {name6, distance6} = pull;
-//       console.log(`Name = ${name6} and distance = ${distance6}`)
-//     }
-//   }
-// console.log(es6Object2);
-//   let es6Object2 = [{
-//     name6: "hi bro",
-//     distance6: 314
-//   }, {
-//     name6: "brodie",
-//     distance6: 23
-//   }
-//   ];
-//
-//   let [x, y] = es6Object2;
-//   console.log(x,y);
+  //   var name = "namebro";
+  //   var distance = 4.2;
+  //
+  //   var es5Object = {
+  //     name: name,
+  //     distance: distance
+  //   }
+  //
+  //   // let name6 = "namebruh";
+  //   // let distance6 = 5.2
+  //
+  //   let es6Object = {
+  //     name6: "hi bro",
+  //     distance6: 314
+  //   };
+  //
+  //   // You can use the NAME OF THE VARIABLE to be the property name, and the value is the value.
+  //   console.log(es5Object);
+  //   // console.log(es6Object);
+  // //  Object properties get changed to alphabetical in the console lol didn't notice.
+  //
+  //
+  // //  ES6 Pull properties
+  //
+  //   let {name6, distance6} = es6Object;
+  //
+  //   console.log(name6,distance6);
+  // //  We pulled the value of name6 and declared it to a let, so it's like I wrote:
+  // //  let name6 = "hi bro". without having to it.
+  //
+  //   let es6Object2 = [{
+  //     name6: "hi bro",
+  //     distance6: 314
+  //   }, {
+  //     name6: "brodie",
+  //     distance6: 23
+  //   }
+  //   ];
+  //   function testPull(arrayObject) {
+  //     for (let pull of arrayObject) {
+  //       let {name6, distance6} = pull;
+  //       console.log(`Name = ${name6} and distance = ${distance6}`)
+  //     }
+  //   }
+  // console.log(es6Object2);
+  //   let es6Object2 = [{
+  //     name6: "hi bro",
+  //     distance6: 314
+  //   }, {
+  //     name6: "brodie",
+  //     distance6: 23
+  //   }
+  //   ];
+  //
+  //   let [x, y] = es6Object2;
+  //   console.log(x,y);
+
+</script>
+<script>
+  // ArrayIteration methods
+  //  .forEach()
+  // let output = "";
+  // let numberino = [3.23,41.09,4.99,62.41];
+  //
+  // // numberino.forEach(function(element,index) {
+  // //   const tax = (element * 0.825).toFixed(2);
+  // //   let total = (parseFloat(element)+ parseFloat(tax)).toFixed(2);
+  // //   output = output +  `<p>Item number ${index}, original price before tax $${element}, item after tax is: $${total}.</p>`
+  // // });
+  //
+  // let pricesAfterTax = [];
+  //
+  // pricesAfterTax = numberino.map(function(price) {
+  //   const tax = (price * 0.0825).toFixed(2);
+  //   let total = (parseFloat(price)+ parseFloat(tax)).toFixed(2);
+  //   return parseFloat(total)
+  //
+  // });
+  // console.log(pricesAfterTax);
+  // //So the return here from map, pushes all the values after completing what was done like when I would .push before to a result array.
+  //
+  // // pricesAfterTax.forEach(function(item){
+  // //     output = output +  `item after tax is: $${item}.</p>`
+  // //   });
+  // //
+  // // $("body").html(output);
+  //
+  // let things = ["bada","bing","bam","pow"];
+  // let pluralThings = things.map(function(thing){
+  //   thing += "s";
+  //   return thing;
+  // });
+  // pluralThings.forEach(function(thing){
+  //   output += `<p>${thing}</p>`
+  // })
+  // $("body").html(output);
+
 
 </script>
 </body>

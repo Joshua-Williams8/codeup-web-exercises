@@ -54,9 +54,9 @@ let names = [];
 // users.forEach(function(user) {
 //   return emails.push(user.email);
 // });
-users.forEach(function(user) {
-  return names.push(user.name);
-});
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
 const getEmails = (userList) => {
   for (let pull of userList) {
     // let {email} = pull
@@ -110,10 +110,11 @@ for (let developer of developers) {
 // developers.forEach(function (developer) {
 
   // TODO: rewrite the assignment below to use template strings
+  list += `<li> ${developer} </li>`;
 
-
-  list += '<li>' + developer + '</li>';
+  // list += '<li>' + developer + '</li>';
 
 }
 list += '</ul>';
-console.log(list)
+// console.log(list)
+// document.write(list);
