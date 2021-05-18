@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>books stuff</title>
+</head>
+<body>
+<button id="addBook">Add book bruh</button>
+<button id="uniqueBooks">Unique book plz</button>
+<div id="container"></div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  let options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }
+  const getBooks = () => {
+
+    let booksReq = fetch("https://spotted-melodic-yew.glitch.me/books", options)
+      .then(resp => resp.json())
+      // .then(resp => { //Idk why this line isn't work...
+      //   resp.json()
+      // })
+      // .then(data => {
+      //   console.log(data)
+      //   })
+      .then(function (books) {
+        let htmlStr = "";
+        console.log(books); //I prefer to write data with the function tbh.
+        for (let book of books) {
+          htmlStr = `${htmlStr} <h1>${book.title}</h1><p>by: ${book.author.firstName} ${book.author.lastName}</p>`
+        }
+        $("#container").html(htmlStr)
+      })
+  }
+
+  getBooks();
+
+
+
+  // let booksReq2 = fetch("https://spotted-melodic-yew.glitch.me/books/1", options)
+  //   .then(resp => resp.json())
+  //   .then(function(data){
+  //     console.log(data)
+  //   })
+
+  //POST
+  let newBook = {
+
+    "title": "Little Red",
+    "author": {
+      "firstName": "Hasan",
+      "lastName": "Minks"
+    }
+  };
+
+  let POSToptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newBook)
+  }
+  $("#addBook").click(function(){
+      fetch("https://spotted-melodic-yew.glitch.me/books/", POSToptions)
+      .then(resp => resp.json())
+      .then(function (data) { //You can also .then(getBooks)
+        console.log(data);
+        getBooks();
+      })
+  })
+//Uncomment below to test the POST option to send data. from the stuff above.
+//   fetch("https://spotted-melodic-yew.glitch.me/books/", POSToptions)
+  //   .then(resp => resp.json())
+  //   .then(function (data) {
+  //     console.log(data)
+  //   })
+//  The changes aren't being written to the file immediately?
+  //PUT
+  let modification = {
+    "title": "I put this here",
+    "author": {
+      "firstName": "Hasanabi",
+      "lastName": "Minks"
+    }
+  }
+  //You need the author added on there so you don't get an error when loading.
+  let putOptions = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(modification)
+  }
+//Notice the /1 at the end
+//    fetch("https://spotted-melodic-yew.glitch.me/books/6", putOptions)
+//     .then(getBooks);
+
+  // getBooks();
+
+  //PATCH
+  //"author": {
+  // "firstName": "Hasanito",
+  //   "lastName": "Bitio"
+  // }
+  let patchThis = {
+    "title": "I patched this in",
+
+  }
+  //You need the author added on there so you don't get an error when loading.
+  let patchOptions = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(patchThis)
+  }
+     // fetch("https://spotted-melodic-yew.glitch.me/books/5", patchOptions)
+     //  .then(getBooks);
+  //Patch lets you keep your other properties the same without, redefining it unlike the PUT method.
+
+
+
+  // delete
+
+  let deleteOptions = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(patchThis)
+  }
+  $("#uniqueBooks").click(() => {
+    fetch('https://spotted-melodic-yew.glitch.me/books')
+      .then(resp => resp.json())
+      .then(books => {
+        let uniqueBooks = [];
+        for (let book of books){
+          if (uniqueBooks.length === 0){
+            uniqueBooks.push(book);
+            continue;
+          }
+          for (let existingBook of uniqueBooks) {
+            if (book.title !== existingBook.title && book.author.firstName !== existingBook.author.firstName && book.author.lastName !== existingBook.author.lastName) {
+              uniqueBooks.push(book);
+            } else {
+              fetch(`https://spotted-melodic-yew.glitch.me/books/${book.id}`, deleteOptions)
+            .then(getBooks);
+            }
+          }
+        }
+      })
+  });
+
+//If you delete from the middle it will skip, so the 8th id will not backfill and become 7
+//  If you add another item it'll go to the next availble ID it saw after the last record.
+
+
+</script>
+</html>

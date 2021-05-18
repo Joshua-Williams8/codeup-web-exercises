@@ -591,6 +591,30 @@ function countVowels(string){
   return count;
 }
 
+const month = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function date(number){
+  if(number == 1){
+    return "1st"
+  } else if (number == 2){
+    return "2nd"
+  } else if (number == 3){
+    return "3rd"
+  } else {
+    number = number + "";
+    if(number[number.length - 1] == 1) {
+      return number + "st"
+    } else if(number[number.length - 1] == 2){
+      return number + "nd"
+    } else if(number == 13){
+      return number + "th"
+    } else if(number[number.length - 1] == 3){
+      return number + "rd"
+    } else {
+      return number + "th"
+    }
+  }
+}
 
 
 
