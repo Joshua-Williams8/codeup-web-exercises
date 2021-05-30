@@ -16,3 +16,12 @@ const giveSeven = function () {
 
 const returnSeven = () => 7;
 
+const multFive = (num) => {
+  if(isNaN(num * 5)){
+    return 0
+  } else {
+    return num * 5
+  }
+}
+
+
