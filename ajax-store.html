@@ -44,14 +44,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-// (function() {
+(function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
       var inventoryData;
       function loadData() {
         $("#insertProducts").html("");
         $.ajax("data/inventory.json").done(function (data, status, jqXhr) {
-          // alert("Test load worked");
 
           data.forEach(function (dataX, indexX) {
             inventoryData =
@@ -88,14 +87,13 @@
       var ref = loadData();
       $("#insertProducts").html(ref);
     });
-// $("#refresh").click(loadData());
 
 
 
 
 
 
-// })();
+})();
 </script>
 
 </body>
