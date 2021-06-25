@@ -616,5 +616,12 @@ function date(number){
   }
 }
 
+function salesTax(price,taxP){
+  return price * taxP / 100
+}
+function addSalesTax(price,taxP){
+  let addMe = price * taxP / 100
+  return price + addMe
+}
 
 
