@@ -619,6 +619,8 @@ function date(number){
 function salesTax(price,taxP){
   return price * taxP / 100
 }
+//For a sale application in the appendix.
+
 function addSalesTax(price,taxP){
   let addMe = price * taxP / 100
   return price + addMe
