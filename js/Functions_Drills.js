@@ -624,6 +624,7 @@ function salesTax(price,taxP){
 function addSalesTax(price,taxP){
   let addMe = price * taxP / 100
   return price + addMe
+//  f
 }
 
 
