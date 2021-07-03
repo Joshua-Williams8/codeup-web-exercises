@@ -97,14 +97,30 @@ var fillings = [
   "tuna"
 ];
 
+
+
+
 function makeSandwhichObjects(arrayOne,arrayTwo){
-  var resultArrays = [];
+  let resultArrays = [];
   arrayOne.forEach(function(elementOne,indexOne){
     arrayTwo.forEach(function(elementTwo,indexTwo){
       if (indexOne === indexTwo){
         resultArrays.push([elementOne,elementTwo],);
       }
     })
+  })
+  return resultArrays
+}
+
+function getRandomNumber(min,max){
+  return Math.floor(Math.random() * max) + min;
+}
+
+function makeSandwhichObjectsRandom(arrayOne,arrayTwo){
+  let resultArrays = [];
+  arrayOne.forEach(function(elementOne,indexOne){
+    resultArrays.push([elementOne,arrayTwo[getRandomNumber(0,arrayTwo.length)]],);
+
   })
   return resultArrays
 }
